@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cjgtvvn1r58es"]
-
-[ext_resource type="Texture2D" uid="uid://ccw023itjry5v" path="res://Mine/Models/Modular/Sci fi/ScifiCeiling.png" id="1_lu6e4"]
-
-[resource]
-albedo_color = Color(1, 0.4, 0.105882, 1)
-albedo_texture = ExtResource("1_lu6e4")
