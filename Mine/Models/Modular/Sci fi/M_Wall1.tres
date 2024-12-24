@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d331kbkw0u3x6"]
+
+[ext_resource type="Texture2D" uid="uid://dy740ovmtbmmb" path="res://Mine/Models/Modular/Sci fi/ScifiWall1.png" id="1_xpk5q"]
+
+[resource]
+albedo_color = Color(0.635294, 1, 1, 1)
+albedo_texture = ExtResource("1_xpk5q")

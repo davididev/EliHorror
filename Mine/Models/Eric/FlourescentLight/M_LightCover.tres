@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bjevgjyu3u284"]
+
+[ext_resource type="Shader" uid="uid://b3gdigkl0etk6" path="res://Mine/Models/Eric/FlourescentLight/LightCover.tres" id="1_gj8b7"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_gj8b7")

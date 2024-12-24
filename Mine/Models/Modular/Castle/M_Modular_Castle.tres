@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dp2nipwd54i7y"]
+
+[ext_resource type="Texture2D" uid="uid://b8mu2ei6f0dia" path="res://Mine/Models/Modular/Castle/GreyscalePalette.png" id="1_pqc2y"]
+
+[resource]
+albedo_texture = ExtResource("1_pqc2y")

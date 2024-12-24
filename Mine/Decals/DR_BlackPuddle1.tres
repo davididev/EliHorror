@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DecorationResource" load_steps=3 format=3 uid="uid://dmtq0bamf31hs"]
+
+[ext_resource type="PackedScene" uid="uid://baglkwbf3b7n6" path="res://Mine/Decals/DI_Blackpuddle1.tscn" id="1_1jytq"]
+[ext_resource type="Script" path="res://VR/Scripts/Misc/DecorationResource.gd" id="1_f7nwo"]
+
+[resource]
+script = ExtResource("1_f7nwo")
+Prefab = ExtResource("1_1jytq")
+Weight = 2
+MinRotate = 0.0
+MaxRotate = 180.0
+MinScale = 0.75
+MaxScale = 0.75

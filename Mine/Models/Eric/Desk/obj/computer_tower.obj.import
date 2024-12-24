@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cvdhr5e6sm08"
+path="res://.godot/imported/computer_tower.obj-c078aa243aa34757d523549f5edba2e9.mesh"
+
+[deps]
+
+files=["res://.godot/imported/computer_tower.obj-c078aa243aa34757d523549f5edba2e9.mesh"]
+
+source_file="res://Mine/Models/Eric/Desk/obj/computer_tower.obj"
+dest_files=["res://.godot/imported/computer_tower.obj-c078aa243aa34757d523549f5edba2e9.mesh", "res://.godot/imported/computer_tower.obj-c078aa243aa34757d523549f5edba2e9.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c7tf5aholv64a"]
+
+[ext_resource type="Texture2D" uid="uid://dywqc653hiphu" path="res://Mine/Models/Eric/ElevatorInner_ElevatorWall.png" id="1_q38rd"]
+
+[resource]
+albedo_texture = ExtResource("1_q38rd")

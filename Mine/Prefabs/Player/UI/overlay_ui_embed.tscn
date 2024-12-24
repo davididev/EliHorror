@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds1ctf8lclbhe"]
+
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="1_r32pd"]
+[ext_resource type="PackedScene" uid="uid://cfsv6f3mas4le" path="res://Mine/Prefabs/Player/UI/overlay_ui_content.tscn" id="2_uqq63"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w28ht"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+
+[node name="OverlayUIEmbed" type="Node3D"]
+
+[node name="Viewport2Din3D" parent="." instance=ExtResource("1_r32pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015)
+screen_size = Vector2(0.625, 0.625)
+scene = ExtResource("2_uqq63")
+viewport_size = Vector2(400, 400)
+material = SubResource("StandardMaterial3D_w28ht")
+scene_properties_keys = PackedStringArray("overlay_ui_content.gd")

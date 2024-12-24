@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://sqarqieakgh6"
+path="res://.godot/imported/desk_top.obj-4d6e58f36989e51c73344edd5fe60665.mesh"
+
+[deps]
+
+files=["res://.godot/imported/desk_top.obj-4d6e58f36989e51c73344edd5fe60665.mesh"]
+
+source_file="res://Mine/Models/Eric/Desk/obj/desk_top.obj"
+dest_files=["res://.godot/imported/desk_top.obj-4d6e58f36989e51c73344edd5fe60665.mesh", "res://.godot/imported/desk_top.obj-4d6e58f36989e51c73344edd5fe60665.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

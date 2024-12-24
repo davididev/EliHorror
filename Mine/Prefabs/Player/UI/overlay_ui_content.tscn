@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfsv6f3mas4le"]
+
+[ext_resource type="Script" path="res://Mine/Scripts/Player/overlay_ui_content.gd" id="1_7uv15"]
+[ext_resource type="Theme" uid="uid://bsrqaeol8u2e4" path="res://VR/Graphics/IU/SubtitleTheme.tres" id="2_ex1gl"]
+
+[node name="VBoxContainer" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 400.0
+offset_bottom = 400.0
+script = ExtResource("1_7uv15")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 2
+offset_right = 400.0
+offset_bottom = 400.0
+color = Color(0, 0, 0, 1)
+
+[node name="Time Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 159.0
+offset_top = -10.0
+offset_right = 386.0
+offset_bottom = 73.0
+theme_override_font_sizes/font_size = 60
+text = "0:00 PM"
+horizontal_alignment = 2
+
+[node name="Subtitle" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -150.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_ex1gl")
+bbcode_enabled = true

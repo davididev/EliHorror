@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b4hg6sv283uoh"]
+
+[ext_resource type="Texture2D" uid="uid://dctr2r8tcqedp" path="res://Mine/Models/Eric/ElevatorInner_ElevatorPanel.png" id="1_j46sj"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_j46sj")

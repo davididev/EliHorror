@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh0n6n2wihbw1"]
+
+[ext_resource type="Material" uid="uid://dfjvuer76n0tj" path="res://Mine/Decals/M_BlackPuddle2.tres" id="1_ylga6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_p1otr"]
+
+[node name="BlackPuddle" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+mesh = SubResource("BoxMesh_p1otr")
+surface_material_override/0 = ExtResource("1_ylga6")
