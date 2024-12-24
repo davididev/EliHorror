@@ -58,6 +58,7 @@ shape = SubResource("BoxShape3D_c0xmp")
 
 [node name="SceneVars" type="Node3D" parent="."]
 script = ExtResource("3_t40ku")
+MusicPath = "Mystery Manor.mp3"
 DialogueOnStart = ExtResource("4_x2odh")
 
 [node name="TitlePortal" parent="." instance=ExtResource("5_o8oy5")]

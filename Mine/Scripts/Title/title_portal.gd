@@ -6,7 +6,7 @@ var SceneToGoTo = "";
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	get_node("Label3D").text = str("Chapter ", ChapterID);
-	SceneToGoTo = "Mine/Scenes/Chapter1.tscn";
+	SceneToGoTo = str("Mine/Scenes/Chapter", ChapterID, ".tscn");
 	pass # Replace with function body.
 
 
