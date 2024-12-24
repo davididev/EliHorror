@@ -2,6 +2,7 @@ class_name SceneVars extends Node3D
 
 @export var MusicPath : String = "";
 @export var DialogueOnStart : DialogueGrid;
+@export var ResetHealth = true;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

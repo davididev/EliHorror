@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://clb0nnltjytql"]
+
+[ext_resource type="Script" path="res://Mine/Scripts/Title/title_portal.gd" id="1_3efyg"]
+[ext_resource type="FontFile" uid="uid://dddecguo18vt1" path="res://Mine/UI/CHILLER.TTF" id="1_jsry5"]
+[ext_resource type="PackedScene" uid="uid://dnd07mqihef83" path="res://Mine/Models/Title/PortalField.glb" id="2_ihrt6"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_816b0"]
+
+[node name="TitlePortal" type="Area3D"]
+script = ExtResource("1_3efyg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_816b0")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+billboard = 2
+modulate = Color(1, 0, 0, 1)
+outline_modulate = Color(0.215686, 0, 0, 1)
+text = "Chapter 1"
+font = ExtResource("1_jsry5")
+font_size = 120
+justification_flags = 131
+
+[node name="PortalField" parent="." instance=ExtResource("2_ihrt6")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cracaaybtyayd"]
+[gd_scene load_steps=12 format=3 uid="uid://cracaaybtyayd"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/staging/scene_base.gd" id="1_erbc6"]
 [ext_resource type="PackedScene" uid="uid://ddyo2jv7628sa" path="res://VR/Prefabs/player_boilerplate.tscn" id="2_x6052"]
 [ext_resource type="Script" path="res://VR/Scripts/Misc/SceneVars.gd" id="3_t40ku"]
-[ext_resource type="Resource" path="res://DialogueSystem/output/Intro.res" id="4_x2odh"]
+[ext_resource type="Resource" uid="uid://22gllee0ckxo" path="res://DialogueSystem/output/Intro.res" id="4_x2odh"]
+[ext_resource type="PackedScene" uid="uid://clb0nnltjytql" path="res://Mine/Prefabs/Titlescreen/title_portal.tscn" id="5_o8oy5"]
 
 [sub_resource type="Environment" id="Environment_i2y4h"]
 background_mode = 1
@@ -58,3 +59,6 @@ shape = SubResource("BoxShape3D_c0xmp")
 [node name="SceneVars" type="Node3D" parent="."]
 script = ExtResource("3_t40ku")
 DialogueOnStart = ExtResource("4_x2odh")
+
+[node name="TitlePortal" parent="." instance=ExtResource("5_o8oy5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.781, 0, 0.61)

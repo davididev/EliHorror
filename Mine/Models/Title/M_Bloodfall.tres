@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dxea1n8n43maa"]
+
+[ext_resource type="Shader" uid="uid://c6ay41e4xpw7e" path="res://Mine/Models/Title/S_Bloodfall.tres" id="1_wm5go"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_wm5go")
