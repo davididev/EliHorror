@@ -1,4 +1,4 @@
 class_name CreditsEntry extends Resource
 
-@export var CategoryName = "Graphics";
-@export var Entries : Array[String];
+@export var Item : String;
+@export var Source : String;

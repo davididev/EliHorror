@@ -1,10 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://cracaaybtyayd"]
+[gd_scene load_steps=16 format=3 uid="uid://cracaaybtyayd"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/staging/scene_base.gd" id="1_erbc6"]
 [ext_resource type="PackedScene" uid="uid://ddyo2jv7628sa" path="res://VR/Prefabs/player_boilerplate.tscn" id="2_x6052"]
 [ext_resource type="Script" path="res://VR/Scripts/Misc/SceneVars.gd" id="3_t40ku"]
 [ext_resource type="Resource" uid="uid://22gllee0ckxo" path="res://DialogueSystem/output/Intro.res" id="4_x2odh"]
 [ext_resource type="PackedScene" uid="uid://clb0nnltjytql" path="res://Mine/Prefabs/Titlescreen/title_portal.tscn" id="5_o8oy5"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="6_6otpb"]
+[ext_resource type="PackedScene" uid="uid://dvxfhudeghau3" path="res://Mine/UI/credits_ui.tscn" id="7_ljmvi"]
+[ext_resource type="Resource" uid="uid://c08sqlr6rc60a" path="res://Mine/Scripts/Credits/GameCredits.tres" id="8_8huhk"]
 
 [sub_resource type="Environment" id="Environment_i2y4h"]
 background_mode = 1
@@ -24,6 +27,11 @@ size = Vector3(50, 12, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c0xmp"]
 size = Vector3(50, 12, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h34pw"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
 
 [node name="XRToolsSceneBase" type="Node3D"]
 script = ExtResource("1_erbc6")
@@ -63,3 +71,12 @@ DialogueOnStart = ExtResource("4_x2odh")
 
 [node name="TitlePortal" parent="." instance=ExtResource("5_o8oy5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.781, 0, 0.61)
+
+[node name="Viewport2Din3D" parent="." instance=ExtResource("6_6otpb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7, 1.25, 0.015)
+screen_size = Vector2(2, 2)
+scene = ExtResource("7_ljmvi")
+viewport_size = Vector2(400, 400)
+material = SubResource("StandardMaterial3D_h34pw")
+scene_properties_keys = PackedStringArray("credits_ui.gd", "creditsRef")
+creditsRef = ExtResource("8_8huhk")

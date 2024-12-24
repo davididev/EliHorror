@@ -1,3 +1,3 @@
 class_name CreditsRoot extends Resource
 
-@export var categories : Array[CreditsEntry];
+@export var categories : Array[CreditsCategory];
