@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cracaaybtyayd"]
+[gd_scene load_steps=17 format=3 uid="uid://cracaaybtyayd"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/staging/scene_base.gd" id="1_erbc6"]
 [ext_resource type="PackedScene" uid="uid://ddyo2jv7628sa" path="res://VR/Prefabs/player_boilerplate.tscn" id="2_x6052"]
@@ -32,6 +32,9 @@ size = Vector3(50, 12, 5)
 transparency = 1
 no_depth_test = true
 shading_mode = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_log26"]
+size = Vector3(1, 1, 0.1)
 
 [node name="XRToolsSceneBase" type="Node3D"]
 script = ExtResource("1_erbc6")
@@ -81,3 +84,9 @@ viewport_size = Vector2(400, 400)
 material = SubResource("StandardMaterial3D_h34pw")
 scene_properties_keys = PackedStringArray("credits_ui.gd", "creditsRef")
 creditsRef = ExtResource("8_8huhk")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Viewport2Din3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Viewport2Din3D/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.05)
+shape = SubResource("BoxShape3D_log26")
