@@ -6,7 +6,7 @@
 script = ExtResource("1_fswdv")
 command_name = "sce"
 arguments = Array[String](["Scene Directory", "Position"])
-defaultValues = Array[String](["Mine/Ch1/Scene", "0,0,0"])
+defaultValues = Array[String](["Mine/Scenes/Ch1/Scene.tscn", "0,0,0"])
 StartingHealth = 100
 StartingStr = 3
 StartingMag = 1

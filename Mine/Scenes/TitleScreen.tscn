@@ -43,6 +43,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 
 environment = SubResource("Environment_i2y4h")
 
 [node name="Bounds" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bounds"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -73,8 +74,8 @@ DialogueOnStart = ExtResource("4_x2odh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.781, 0, 0.61)
 
 [node name="Viewport2Din3D" parent="." instance=ExtResource("6_6otpb")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7, 1.25, 0.015)
-screen_size = Vector2(2, 2)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7, 1.94931, 0.015)
+screen_size = Vector2(1, 1)
 scene = ExtResource("7_ljmvi")
 viewport_size = Vector2(400, 400)
 material = SubResource("StandardMaterial3D_h34pw")
