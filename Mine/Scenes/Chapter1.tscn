@@ -61,3 +61,4 @@ environment = SubResource("Environment_tq068")
 script = ExtResource("4_gh34w")
 MusicPath = "Mystery Manor.mp3"
 DialogueOnStart = ExtResource("6_ei0ox")
+ChapterHeader = "Chapter 1"

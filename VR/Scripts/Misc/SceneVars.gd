@@ -3,9 +3,11 @@ class_name SceneVars extends Node3D
 @export var MusicPath : String = "";
 @export var DialogueOnStart : DialogueGrid;
 @export var ResetHealth = true;
+@export var ChapterHeader = "";
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	OverlayUI.CurrentChapterHeader = "";
 	if MusicPath != "":
 		PlayMusic.PlaySong(MusicPath);
 		
@@ -13,7 +15,18 @@ func _ready() -> void:
 		await get_tree().create_timer(0.1).timeout;
 		DialogueHandler.Instance.StartDialogue(DialogueOnStart);
 
+	if ChapterHeader != "":
+		RunChapterHeader();
 
+func RunChapterHeader():
+	var max = ChapterHeader.length();
+	for i in range(0, max):
+		OverlayUI.CurrentChapterHeader = ChapterHeader.substr(0, i);
+		SoundFXPlayer.PlaySound("typewriter.mp3", get_tree(), global_position, 20.0, 10.0);
+		await get_tree().create_timer(0.075).timeout;
+	
+	await get_tree().create_timer(1.0).timeout;
+	OverlayUI.CurrentChapterHeader = "";
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

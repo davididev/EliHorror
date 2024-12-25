@@ -1,6 +1,7 @@
 class_name OverlayUI extends Control
 
 static var CurrentSubtitle : String;
+static var CurrentChapterHeader : String;
 #@export var subtitleRef : NodePath;
 
 var refresh_time_timer = 0.0;
@@ -14,6 +15,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	get_node("Subtitle").text = CurrentSubtitle;
+	get_node("Chapter Header").text = CurrentChapterHeader;
 	RefreshTime(delta);
 	
 func RefreshTime(delta: float):

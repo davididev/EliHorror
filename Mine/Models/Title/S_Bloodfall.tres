@@ -1,10 +1,11 @@
-[gd_resource type="VisualShader" load_steps=9 format=3 uid="uid://c6ay41e4xpw7e"]
+[gd_resource type="VisualShader" load_steps=10 format=3 uid="uid://c6ay41e4xpw7e"]
 
 [ext_resource type="Texture2D" uid="uid://cpbhdpvlcubt" path="res://Mine/Models/Title/PortalAlpha.png" id="1_kxk1u"]
 [ext_resource type="Texture2D" uid="uid://b4vyyl6dh18mr" path="res://Mine/Models/Title/BloodFall.png" id="2_ud8vw"]
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_6tcsc"]
 texture = ExtResource("1_kxk1u")
+texture_type = 1
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_1hh5l"]
 texture = ExtResource("2_ud8vw")
@@ -22,12 +23,19 @@ operator = 2
 [sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_ktshb"]
 op_type = 0
 
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_8615k"]
+parameter_name = "Texture2DParameter"
+texture_type = 1
+color_default = 1
+texture_filter = 1
+
 [resource]
 code = "shader_type spatial;
 render_mode blend_mix, depth_draw_opaque, cull_disabled, diffuse_lambert, specular_schlick_ggx;
 
 uniform sampler2D tex_frg_3 : source_color;
-uniform sampler2D tex_frg_2;
+uniform sampler2D Texture2DParameter : source_color, hint_default_black, filter_nearest;
+uniform sampler2D tex_frg_2 : source_color;
 
 
 
@@ -66,7 +74,7 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-236.751, 0)
+graph_offset = Vector2(-391.344, 510.226)
 modes/cull = 2
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_6tcsc")
 nodes/fragment/2/position = Vector2(60, 280)
@@ -80,4 +88,6 @@ nodes/fragment/7/node = SubResource("VisualShaderNodeUVFunc_epo56")
 nodes/fragment/7/position = Vector2(-240, 100)
 nodes/fragment/8/node = SubResource("VisualShaderNodeVectorCompose_ktshb")
 nodes/fragment/8/position = Vector2(-300, 280)
-nodes/fragment/connections = PackedInt32Array(2, 0, 0, 1, 3, 0, 0, 0, 5, 0, 6, 0, 7, 0, 3, 0, 8, 0, 7, 2, 6, 0, 8, 1)
+nodes/fragment/9/node = SubResource("VisualShaderNodeTexture2DParameter_8615k")
+nodes/fragment/9/position = Vector2(-240, 500)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 1, 3, 0, 0, 0, 5, 0, 6, 0, 7, 0, 3, 0, 8, 0, 7, 2, 6, 0, 8, 1, 9, 0, 2, 2)
