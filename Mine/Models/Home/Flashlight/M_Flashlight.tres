@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dvtscxabs8aqc"]
+
+[ext_resource type="Texture2D" uid="uid://cw8dymmdsw3th" path="res://Mine/Models/Home/Flashlight/torch.jpg" id="1_tumit"]
+
+[resource]
+shading_mode = 0
+albedo_texture = ExtResource("1_tumit")

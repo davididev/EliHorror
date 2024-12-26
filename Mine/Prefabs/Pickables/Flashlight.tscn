@@ -11,14 +11,15 @@ height = 1.8
 [node name="Flashlighjt" type="Node3D"]
 
 [node name="PickableObject" parent="." instance=ExtResource("1_a6po3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0451152, 0, 1.37874)
+ranged_grab_method = 2
+second_hand_grab = 2
 
 [node name="CollisionShape3D" parent="PickableObject" index="0"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, -0.25, 0, 0.25, -1.09278e-08, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_n7eqn")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="PickableObject/CollisionShape3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.286812, -0.891786, -0.243158)
+transform = Transform3D(4, 0, 0, 0, -1.74846e-07, 4, 0, -4, -1.74846e-07, 0.286812, -0.5445, -0.243158)
 spot_range = 60.0
 spot_angle = 15.0
 
@@ -28,7 +29,7 @@ mesh = ExtResource("2_n6aer")
 skeleton = NodePath("../../..")
 
 [node name="HighlightRing" parent="PickableObject" instance=ExtResource("3_rkmx1")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
-skeleton = NodePath("../CollisionShape3D")
+transform = Transform3D(8, 0, 0, 0, 2, 0, 0, 0, 60, 0, 0, 0)
+skeleton = NodePath("../..")
 
 [editable path="PickableObject"]
