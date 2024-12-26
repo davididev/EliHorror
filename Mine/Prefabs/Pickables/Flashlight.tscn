@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://v40tkq454bxv"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_a6po3"]
+[ext_resource type="ArrayMesh" uid="uid://bjh8dqqyabmj2" path="res://Mine/Models/Home/Flashlight/torch.obj" id="2_n6aer"]
+[ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="3_rkmx1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n7eqn"]
+radius = 0.2
+height = 1.8
+
+[node name="Flashlighjt" type="Node3D"]
+
+[node name="PickableObject" parent="." instance=ExtResource("1_a6po3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0451152, 0, 1.37874)
+
+[node name="CollisionShape3D" parent="PickableObject" index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_n7eqn")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="PickableObject/CollisionShape3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.286812, -0.891786, -0.243158)
+spot_range = 60.0
+spot_angle = 15.0
+
+[node name="Torch" type="MeshInstance3D" parent="PickableObject/CollisionShape3D" index="1"]
+transform = Transform3D(0.01, 0, 0, 0, -4.37114e-10, 0.01, 0, -0.01, -4.37114e-10, 0.212278, 0.705872, 0.0259926)
+mesh = ExtResource("2_n6aer")
+skeleton = NodePath("../../..")
+
+[node name="HighlightRing" parent="PickableObject" instance=ExtResource("3_rkmx1")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+skeleton = NodePath("../CollisionShape3D")
+
+[editable path="PickableObject"]

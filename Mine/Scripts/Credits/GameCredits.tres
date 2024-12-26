@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CreditsRoot" load_steps=10 format=3 uid="uid://c08sqlr6rc60a"]
+[gd_resource type="Resource" script_class="CreditsRoot" load_steps=11 format=3 uid="uid://c08sqlr6rc60a"]
 
 [ext_resource type="Script" path="res://Mine/Scripts/Credits/CreditsCategory.gd" id="1_3h8ov"]
 [ext_resource type="Script" path="res://Mine/Scripts/Credits/CreditsEntry.gd" id="1_7f811"]
@@ -9,10 +9,15 @@ script = ExtResource("1_7f811")
 Item = "Demon Model"
 Source = "Grefuntor @ opengameart.org"
 
+[sub_resource type="Resource" id="Resource_61yy2"]
+script = ExtResource("1_7f811")
+Item = "Flashlight"
+Source = "jpsweber @ opengameart.org"
+
 [sub_resource type="Resource" id="Resource_87mmr"]
 script = ExtResource("1_3h8ov")
 CategoryName = "Graphics"
-entries = Array[ExtResource("1_7f811")]([SubResource("Resource_ws8ox")])
+entries = Array[ExtResource("1_7f811")]([SubResource("Resource_ws8ox"), SubResource("Resource_61yy2")])
 
 [sub_resource type="Resource" id="Resource_ey6e5"]
 script = ExtResource("1_7f811")
