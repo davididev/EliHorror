@@ -25,7 +25,7 @@ func RefreshTime(delta: float):
 		var hour = today.hour;
 		if hour >= 12:  #More than 12 PM
 			hour -= 12;
-		var is_pm = today.hour > 12;
+		var is_pm = today.hour >= 12;
 		var minuteStr = str(today.minute);
 		if today.minute < 10:
 			minuteStr = "0" + minuteStr;
