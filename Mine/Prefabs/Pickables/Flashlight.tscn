@@ -4,9 +4,8 @@
 [ext_resource type="ArrayMesh" uid="uid://bjh8dqqyabmj2" path="res://Mine/Models/Home/Flashlight/torch.obj" id="2_n6aer"]
 [ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="3_rkmx1"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n7eqn"]
-radius = 0.2
-height = 1.8
+[sub_resource type="BoxShape3D" id="BoxShape3D_jxcoh"]
+size = Vector3(0.5, 2, 0.35)
 
 [node name="Flashlighjt" type="Node3D"]
 
@@ -16,7 +15,7 @@ second_hand_grab = 2
 
 [node name="CollisionShape3D" parent="PickableObject" index="0"]
 transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, -0.25, 0, 0.25, -1.09278e-08, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_n7eqn")
+shape = SubResource("BoxShape3D_jxcoh")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="PickableObject/CollisionShape3D" index="0"]
 transform = Transform3D(4, 0, 0, 0, -1.74846e-07, 4, 0, -4, -1.74846e-07, 0.286812, -0.5445, -0.243158)
