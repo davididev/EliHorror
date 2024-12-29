@@ -22,8 +22,8 @@ func DrawCurrentEntry():
 	
 	var max = creditsRef.categories[currentCategory].entries.size();
 	var min = currentEntry + 1;
-	var s = str("[center][b]", creditsRef.categories[currentCategory].CategoryName, min, "/", max, "[/b]\n");
-	s = s + str(creditsRef.categories[currentCategory].entries[currentEntry].Item, "by [color=yellow]", creditsRef.categories[currentCategory].entries[currentEntry].Source, "[/color][/center]")
+	var s = str("[center][b]", creditsRef.categories[currentCategory].CategoryName, " ", min, "/", max, "[/b]\n");
+	s = s + str(creditsRef.categories[currentCategory].entries[currentEntry].Item, " by [color=yellow]", creditsRef.categories[currentCategory].entries[currentEntry].Source, "[/color][/center]")
 	get_node("RichTextLabel").text = s;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
