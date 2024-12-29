@@ -27,7 +27,7 @@ Source = "Alexandr Zhelanov @ opengameart.org"
 [sub_resource type="Resource" id="Resource_iju8r"]
 script = ExtResource("1_7f811")
 Item = "Dark Ambience Loop"
-Source = "Iwan Gabovitch qubodup.net"
+Source = "yd @ opengameart.org"
 
 [sub_resource type="Resource" id="Resource_1xl8q"]
 script = ExtResource("1_3h8ov")
