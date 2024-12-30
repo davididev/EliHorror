@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvjslrdg6ivqe"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_kr3d3"]
+[ext_resource type="Script" path="res://Mine/Scripts/Ch1/knife_pickup.gd" id="1_mj7a8"]
+[ext_resource type="Resource" path="res://DialogueSystem/output/Ch1_Demon1.res" id="2_njb53"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_wuuxk"]
+[ext_resource type="PackedScene" uid="uid://dw8wj0uj2jhu7" path="res://Mine/Models/Ch1/CombatKnife.glb" id="3_nso0e"]
+[ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="4_y0b35"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d07cw"]
+size = Vector3(0.2, 0.2, 0.8)
+
+[node name="Knife" type="Node3D"]
+script = ExtResource("1_mj7a8")
+dialogue_on_grab = ExtResource("2_njb53")
+
+[node name="PickableObject" parent="." instance=ExtResource("1_kr3d3")]
+second_hand_grab = 2
+
+[node name="CollisionShape3D" parent="PickableObject" index="0"]
+shape = SubResource("BoxShape3D_d07cw")
+
+[node name="CombatKnife" parent="PickableObject/CollisionShape3D" index="0" instance=ExtResource("3_nso0e")]
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 0, 0, 0)
+
+[node name="HighlightRing" parent="PickableObject" instance=ExtResource("4_y0b35")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.00104596, 0.054933, 0.16991)
+skeleton = NodePath("../GrabPointHandLeft")
+
+[node name="GrabPointHandLeft" parent="PickableObject" instance=ExtResource("2_wuuxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00104596, 0.054933, 0.16991)
+
+[node name="GrabPointHandLeft2" parent="PickableObject" instance=ExtResource("2_wuuxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00104596, 0.054933, 0.16991)
+hand = 1
+
+[connection signal="picked_up" from="PickableObject" to="." method="_on_pickable_object_picked_up"]
+
+[editable path="PickableObject"]

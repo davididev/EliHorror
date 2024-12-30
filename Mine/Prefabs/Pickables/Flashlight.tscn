@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="3_rkmx1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jxcoh"]
-size = Vector3(0.5, 2, 0.35)
+size = Vector3(0.2, 0.2, 0.7)
 
 [node name="Flashlighjt" type="Node3D"]
 
@@ -15,37 +15,27 @@ size = Vector3(0.5, 2, 0.35)
 second_hand_grab = 2
 
 [node name="CollisionShape3D" parent="PickableObject" index="0"]
-transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, -0.25, 0, 0.25, -1.09278e-08, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 shape = SubResource("BoxShape3D_jxcoh")
 
-[node name="GrabPointHandLeft" parent="PickableObject/CollisionShape3D" index="0" instance=ExtResource("2_a0ev4")]
-
-[node name="GrabPointHandRight" parent="PickableObject/CollisionShape3D" index="1" instance=ExtResource("3_keldp")]
-
-[node name="GrabPointHandLeft2" parent="PickableObject/CollisionShape3D" index="2" instance=ExtResource("2_a0ev4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.544068, -2.37819e-08)
-
-[node name="GrabPointHandRight2" parent="PickableObject/CollisionShape3D" index="3" instance=ExtResource("3_keldp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.544068, -2.37819e-08)
-
-[node name="GrabPointHandLeft3" parent="PickableObject/CollisionShape3D" index="4" instance=ExtResource("2_a0ev4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.332791, 1.45467e-08)
-
-[node name="GrabPointHandRight3" parent="PickableObject/CollisionShape3D" index="5" instance=ExtResource("3_keldp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.332791, 1.45467e-08)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="PickableObject/CollisionShape3D" index="6"]
-transform = Transform3D(4, 0, 0, 0, -1.74846e-07, 4, 0, -4, -1.74846e-07, 0.286812, -0.5445, -0.243158)
+[node name="SpotLight3D" type="SpotLight3D" parent="PickableObject/CollisionShape3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0230969, -0.376284)
 spot_range = 60.0
 spot_angle = 15.0
 
-[node name="Torch" type="MeshInstance3D" parent="PickableObject/CollisionShape3D" index="7"]
-transform = Transform3D(0.01, 0, 0, 0, -4.37114e-10, 0.01, 0, -0.01, -4.37114e-10, 0.212278, 0.705872, 0.0259926)
+[node name="Torch" type="MeshInstance3D" parent="PickableObject/CollisionShape3D" index="1"]
+transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0.128576, 0.000657215, 0.321567)
 mesh = ExtResource("2_n6aer")
 skeleton = NodePath("../../..")
 
 [node name="HighlightRing" parent="PickableObject" instance=ExtResource("3_rkmx1")]
-transform = Transform3D(8, 0, 0, 0, 2, 0, 0, 0, 60, 0, 0, 0)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 skeleton = NodePath("../..")
+
+[node name="GrabPointHandLeft" parent="PickableObject" instance=ExtResource("2_a0ev4")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+
+[node name="GrabPointHandRight" parent="PickableObject" instance=ExtResource("3_keldp")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 
 [editable path="PickableObject"]

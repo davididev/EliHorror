@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bvetrr1mx0i6u"]
+[gd_scene load_steps=27 format=4 uid="uid://bvetrr1mx0i6u"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/staging/scene_base.gd" id="1_p20mv"]
 [ext_resource type="PackedScene" uid="uid://ddyo2jv7628sa" path="res://VR/Prefabs/player_boilerplate.tscn" id="2_av1p6"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bdnb3dwcwckrh" path="res://Mine/Models/Home/Cupboard1.gltf" id="9_0yl2j"]
 [ext_resource type="PackedScene" uid="uid://v40tkq454bxv" path="res://Mine/Prefabs/Pickables/Flashlight.tscn" id="10_qapw2"]
 [ext_resource type="Script" path="res://VR/Scripts/Misc/SceneVars.gd" id="13_y5qe2"]
+[ext_resource type="PackedScene" uid="uid://cvjslrdg6ivqe" path="res://Mine/Prefabs/Pickables/Knife.tscn" id="14_3hw0e"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ff27i"]
 lightmap_size_hint = Vector2i(534, 530)
@@ -280,8 +281,19 @@ mesh = SubResource("ArrayMesh_2tpda")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cupboard1/temp/CUBE1/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_gc6t0")
 
+[node name="Cupboard2" parent="." instance=ExtResource("9_0yl2j")]
+transform = Transform3D(5.96244e-09, 0, -0.5, 0, 0.5, 0, 0.5, 0, 5.96244e-09, -13, -1, 11)
+
+[node name="CUBE1" parent="Cupboard2/temp" index="0"]
+mesh = SubResource("ArrayMesh_2tpda")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cupboard2/temp/CUBE1" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cupboard2/temp/CUBE1/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_gc6t0")
+
 [node name="Flashlighjt" parent="." instance=ExtResource("10_qapw2")]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 4.22837, 0.720751, -2.68745)
+transform = Transform3D(-1, 0, -1.50996e-07, -1.50996e-07, -4.37114e-08, 1, -6.60024e-15, 1, 4.37114e-08, 4.22837, 0.798768, -2.68745)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -4)
@@ -294,5 +306,9 @@ light_bake_mode = 1
 script = ExtResource("13_y5qe2")
 MusicPath = "DarkLoop.mp3"
 
+[node name="Knife" parent="." instance=ExtResource("14_3hw0e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.111, 0.608433, 9.97681)
+
 [editable path="BedRed"]
 [editable path="Cupboard1"]
+[editable path="Cupboard2"]
