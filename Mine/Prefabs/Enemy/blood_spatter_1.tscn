@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ieljke23d62o"]
+
+[ext_resource type="Script" path="res://VR/Scripts/Misc/playparticlesonce.gd" id="1_3pi4t"]
+[ext_resource type="Material" uid="uid://djy8eupgljqg6" path="res://Mine/Particles/M_BloodParticle.tres" id="2_vfvnu"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jhu4j"]
+emission_shape = 3
+emission_box_extents = Vector3(0.1, 0.1, 0.1)
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, -4, 0)
+anim_speed_min = 2.0
+anim_speed_max = 2.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_tjroy"]
+material = ExtResource("2_vfvnu")
+size = Vector2(0.5, 0.5)
+
+[node name="PlayParticlesOnce" type="Node3D"]
+script = ExtResource("1_3pi4t")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 16
+one_shot = true
+explosiveness = 0.5
+process_material = SubResource("ParticleProcessMaterial_jhu4j")
+draw_pass_1 = SubResource("QuadMesh_tjroy")

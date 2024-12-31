@@ -16,6 +16,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	get_node("Subtitle").text = CurrentSubtitle;
 	get_node("Chapter Header").text = CurrentChapterHeader;
+	get_node("HealthBar").value = SceneVars.CurrentHealth;
 	RefreshTime(delta);
 	
 func RefreshTime(delta: float):

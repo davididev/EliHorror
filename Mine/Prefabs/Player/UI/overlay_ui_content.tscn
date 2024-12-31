@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfsv6f3mas4le"]
+[gd_scene load_steps=7 format=3 uid="uid://cfsv6f3mas4le"]
 
 [ext_resource type="Script" path="res://Mine/Scripts/Player/overlay_ui_content.gd" id="1_7uv15"]
 [ext_resource type="Theme" uid="uid://bsrqaeol8u2e4" path="res://VR/Graphics/IU/SubtitleTheme.tres" id="2_ex1gl"]
 [ext_resource type="Theme" uid="uid://cfi3ddjr45mcj" path="res://Mine/UI/theme_chapter.tres" id="3_46c41"]
+[ext_resource type="Theme" uid="uid://bs32lsjsmch1v" path="res://Mine/UI/theme_goth_header.tres" id="4_chg74"]
+[ext_resource type="Texture2D" uid="uid://ns6rnlgemm27" path="res://Mine/UI/HealthBarBG.png" id="5_2bnpu"]
+[ext_resource type="Texture2D" uid="uid://bygo21jxojbsu" path="res://Mine/UI/HealthBarFG.png" id="6_6hl47"]
 
 [node name="VBoxContainer" type="Control"]
 layout_mode = 3
@@ -51,3 +54,22 @@ offset_bottom = 136.0
 grow_horizontal = 2
 theme = ExtResource("3_46c41")
 horizontal_alignment = 1
+
+[node name="Health Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 89.0
+offset_right = 43.0
+offset_bottom = 112.0
+theme = ExtResource("4_chg74")
+text = "Health:"
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 65.0
+offset_right = 315.0
+offset_bottom = 129.0
+value = 100.0
+texture_under = ExtResource("5_2bnpu")
+texture_progress = ExtResource("6_6hl47")

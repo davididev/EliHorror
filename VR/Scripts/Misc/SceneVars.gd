@@ -4,9 +4,12 @@ class_name SceneVars extends Node3D
 @export var DialogueOnStart : DialogueGrid;
 @export var ResetHealth = true;
 @export var ChapterHeader = "";
+static  var CurrentHealth = 100;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if ResetHealth:
+		CurrentHealth = 100;
 	OverlayUI.CurrentChapterHeader = "";
 	if MusicPath != "":
 		PlayMusic.PlaySong(MusicPath);

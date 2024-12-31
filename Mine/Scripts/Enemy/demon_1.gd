@@ -5,11 +5,15 @@ extends CharacterBody3D
 @export var Health = 2;
 @export var ActiveOnStart = false;
 @export var fireball_prefab : PackedScene;
+@export var blood_hit_prefab : PackedScene;
+@export var blood_explosion_prefab : PackedScene;
 var currentFireballInstance;
 
 var lastState = "";
 var attackTimer = -1.0;
+var dieTimer = 500.0;
 var attackStep = -1;
+signal OnDamage(amt : int, hitPos : Vector3);
 
 
 func SetActive(act : bool):
@@ -40,7 +44,23 @@ func _process(delta: float) -> void:
 	var dist = myPos.distance_to(targetPos);
 	if dist < 2.0:
 		run_attack_step(delta);
-			
+	
+	if Health > 0:
+		dieTimer = 500.0;
+	else:
+		dieTimer -= delta;
+		if dieTimer < 0.0:
+			#TODO: Make blood explosion
+			queue_free();
+
+func damage(amt : int, sourcePos : Vector3):
+	Health -= amt;
+	if Health <= 0: #Previously set to a high value
+		move_to_state("Die");
+		dieTimer = 1.0;
+	
+	#TODO: Add blood splatter
+	
 
 func run_attack_step(delta : float):
 	attackTimer -= delta;
