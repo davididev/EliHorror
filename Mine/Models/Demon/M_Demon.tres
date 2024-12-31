@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://03rktec5557m"]
+
+[ext_resource type="Texture2D" uid="uid://dxru3r0v08t3a" path="res://Mine/Models/Demon/demon_diffuse.png" id="1_3tl1s"]
+[ext_resource type="Texture2D" uid="uid://bwnegd7wq73ng" path="res://Mine/Models/Demon/demon_normals.png" id="2_tdqmv"]
+
+[resource]
+albedo_texture = ExtResource("1_3tl1s")
+normal_enabled = true
+normal_texture = ExtResource("2_tdqmv")

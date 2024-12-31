@@ -1,0 +1,86 @@
+[gd_resource type="AnimationNodeStateMachine" load_steps=22 format=3 uid="uid://c6t0j1sfbnng8"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lqasv"]
+animation = &"Attack"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7utt0"]
+animation = &"Stagger_Due"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_klome"]
+animation = &"Stagger_GetUp"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mfnh3"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2kbxv"]
+animation = &"Run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gw060"]
+animation = &"StaggerIdle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_shett"]
+animation = &"StaggerStart"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ajjr8"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s2le8"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_v5fb6"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4a0g4"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3e3m3"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qjm4b"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jrkc4"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_arnji"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4vm2y"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gx7ey"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y0uni"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3j0wm"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hk4q8"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_05154"]
+advance_mode = 2
+
+[resource]
+states/Attack/node = SubResource("AnimationNodeAnimation_lqasv")
+states/Attack/position = Vector2(305, 207.619)
+states/Die/node = SubResource("AnimationNodeAnimation_7utt0")
+states/Die/position = Vector2(488, 350.619)
+states/GetUp/node = SubResource("AnimationNodeAnimation_klome")
+states/GetUp/position = Vector2(568, 150.689)
+states/Idle/node = SubResource("AnimationNodeAnimation_mfnh3")
+states/Idle/position = Vector2(313, 117)
+states/Run/node = SubResource("AnimationNodeAnimation_2kbxv")
+states/Run/position = Vector2(411, 117)
+states/Stagger/node = SubResource("AnimationNodeAnimation_gw060")
+states/Stagger/position = Vector2(352, 288.619)
+states/StaggerStart/node = SubResource("AnimationNodeAnimation_shett")
+states/StaggerStart/position = Vector2(433, 213)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_ajjr8"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_s2le8"), "Run", "Attack", SubResource("AnimationNodeStateMachineTransition_v5fb6"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_4a0g4"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_3e3m3"), "Attack", "Run", SubResource("AnimationNodeStateMachineTransition_qjm4b"), "Run", "StaggerStart", SubResource("AnimationNodeStateMachineTransition_jrkc4"), "Idle", "StaggerStart", SubResource("AnimationNodeStateMachineTransition_arnji"), "StaggerStart", "GetUp", SubResource("AnimationNodeStateMachineTransition_4vm2y"), "GetUp", "Run", SubResource("AnimationNodeStateMachineTransition_gx7ey"), "GetUp", "Idle", SubResource("AnimationNodeStateMachineTransition_y0uni"), "StaggerStart", "Stagger", SubResource("AnimationNodeStateMachineTransition_3j0wm"), "StaggerStart", "Die", SubResource("AnimationNodeStateMachineTransition_hk4q8"), "Stagger", "GetUp", SubResource("AnimationNodeStateMachineTransition_05154")]
+graph_offset = Vector2(0, 114.479)
