@@ -15,6 +15,7 @@ var lastState = "";
 var attackTimer = -1.0;
 var dieTimer = 500.0;
 var attackStep = -1;
+var firstKilled = true;
 signal OnDamage(amt : int, hitPos : Vector3);
 
 
@@ -26,6 +27,7 @@ func _init() -> void:
 	lastState = "";
 	attackTimer = -1.0;
 	attackStep = -1;
+	firstKilled = true;
 	move_to_state("Idle");
 	SetActive(ActiveOnStart);
 
@@ -60,7 +62,8 @@ func _process(delta: float) -> void:
 
 func damage(amt : int, sourcePos : Vector3):
 	Health -= amt;
-	if Health <= 0: #Previously set to a high value
+	if Health <= 0 && firstKilled: #Previously set to a high value
+		firstKilled = false;
 		if dialogueOnDeath != null:
 			DialogueHandler.Instance.StartDialogue(dialogueOnDeath);
 		move_to_state("Die");
