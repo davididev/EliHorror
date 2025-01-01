@@ -2,9 +2,9 @@ extends CharacterBody3D
 
 @export var boneAttachRightHand : NodePath;
 @export var tree : NodePath;
+@export var path_to_fireball : NodePath;
 @export var Health = 2;
 @export var ActiveOnStart = false;
-@export var fireball_prefab : PackedScene;
 @export var blood_hit_prefab : PackedScene;
 @export var blood_explosion_prefab : PackedScene;
 var currentFireballInstance;
@@ -74,12 +74,10 @@ func run_attack_step(delta : float):
 		if attackTimer <= 0.0:
 			attackStep = 1;
 			attackTimer = 2.0;
-			currentFireballInstance = fireball_prefab.instantiate();
-			get_node(boneAttachRightHand).add_child(currentFireballInstance);
-			
+			get_node(path_to_fireball).emitting = true;
 	if attackStep == 1: #After we create the fireball and before we end aniumation
 		if attackTimer <= 0.0:
-			get_node(boneAttachRightHand).remove_child(currentFireballInstance);
+			get_node(path_to_fireball).emitting = false;
 			attackStep = -1;
 			attackTimer = 0.2;
 			move_to_state("Idle");

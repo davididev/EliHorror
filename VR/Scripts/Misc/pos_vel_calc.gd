@@ -1,5 +1,7 @@
 class_name PosVelCalc extends Node3D
 
+var damageTimer = -1.0;
+const DAMAGE_DELAY = 0.5;
 static var LeftHandPos : Vector3;
 static var RightHandPos : Vector3;
 static var HeadPos : Vector3;
@@ -34,3 +36,12 @@ func _process(delta: float) -> void:
 	_last_left_hand_position = get_node(LeftHandRef).position;
 	_last_right_hand_position = get_node(RightHandRef).position
 	_last_head_position = get_node(HeadRef).position;
+	if damageTimer > 0.0:
+		damageTimer -= delta;
+
+func _on_player_body_on_damage(amt: int, hitPos: Vector3) -> void:
+	if damageTimer > 0.0:
+		return;
+	SceneVars.CurrentHealth -= amt;
+	damageTimer = DAMAGE_DELAY;
+	

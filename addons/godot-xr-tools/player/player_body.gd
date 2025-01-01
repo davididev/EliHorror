@@ -29,6 +29,7 @@ signal player_teleported()
 ## Signal emitted when the player bounces
 signal player_bounced(collider, magnitude)
 
+signal OnDamage(amt : int, hitPos : Vector3);
 
 ## Enumeration indicating when ground control can be used
 enum GroundControl {

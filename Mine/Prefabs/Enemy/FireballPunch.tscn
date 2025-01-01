@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://o4ynljtclwor"]
+[gd_scene load_steps=7 format=3 uid="uid://o4ynljtclwor"]
 
+[ext_resource type="Script" path="res://Mine/Scripts/Enemy/fireball_punch.gd" id="1_c4q8j"]
 [ext_resource type="Material" uid="uid://35dbyjf0tx3b" path="res://Mine/Particles/M_Fireball.tres" id="1_vpg1x"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_smlec"]
@@ -28,14 +29,18 @@ size = Vector2(0.5, 0.5)
 [node name="FireballPunch" type="Area3D"]
 collision_layer = 2
 collision_mask = 524288
+script = ExtResource("1_c4q8j")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_smlec")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="CollisionShape3D"]
+emitting = false
 amount = 50
 process_material = SubResource("ParticleProcessMaterial_wgcjw")
 draw_pass_1 = SubResource("QuadMesh_lujn8")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="CollisionShape3D"]
 light_size = 4.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
