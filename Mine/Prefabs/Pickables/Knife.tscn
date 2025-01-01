@@ -10,7 +10,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_d07cw"]
 size = Vector3(0.2, 0.2, 0.8)
 
-[node name="Knife" type="Node3D"]
+[node name="Knife" type="Node3D" groups=["Damagable"]]
 script = ExtResource("1_mj7a8")
 dialogue_on_grab = ExtResource("2_njb53")
 
@@ -34,6 +34,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00104596, 0.054933, 0.16991
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00104596, 0.054933, 0.16991)
 hand = 1
 
+[node name="BladePoint" type="Node3D" parent="PickableObject"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.272132)
+
+[connection signal="body_entered" from="PickableObject" to="." method="_on_pickable_object_body_entered"]
 [connection signal="picked_up" from="PickableObject" to="." method="_on_pickable_object_picked_up"]
 
 [editable path="PickableObject"]

@@ -14,6 +14,7 @@ var _last_right_hand_position : Vector3;
 var _last_head_position : Vector3;
 
 
+var blood_hit_prefab : PackedScene = preload("res://Mine/Prefabs/Enemy/blood_spatter_1.tscn");
 @export var LeftHandRef : NodePath;
 @export var RightHandRef : NodePath;
 @export var HeadRef : NodePath;
@@ -44,4 +45,7 @@ func _on_player_body_on_damage(amt: int, hitPos: Vector3) -> void:
 		return;
 	SceneVars.CurrentHealth -= amt;
 	damageTimer = DAMAGE_DELAY;
+	var inst = blood_hit_prefab.instantiate();
+	inst.global_position = hitPos;
+	inst.global_basis.z = global_basis.z;
 	

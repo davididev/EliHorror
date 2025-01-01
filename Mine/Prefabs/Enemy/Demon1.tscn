@@ -9,7 +9,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hmn41"]
 
-[node name="Demon1" type="CharacterBody3D"]
+[node name="Demon1" type="CharacterBody3D" groups=["Damagable"]]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_avqsw")

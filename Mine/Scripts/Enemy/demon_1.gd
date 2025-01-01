@@ -6,8 +6,8 @@ extends CharacterBody3D
 @export var path_to_fire_light : NodePath;
 @export var Health = 2;
 @export var ActiveOnStart = false;
-@export var blood_hit_prefab : PackedScene;
-@export var blood_explosion_prefab : PackedScene;
+var blood_hit_prefab : PackedScene = preload("res://Mine/Prefabs/Enemy/blood_spatter_1.tscn");
+var blood_explosion_prefab : PackedScene = preload("res://Mine/Prefabs/Enemy/blood_explosion.tscn");
 var currentFireballInstance;
 
 var lastState = "";
@@ -52,6 +52,9 @@ func _process(delta: float) -> void:
 		dieTimer -= delta;
 		if dieTimer < 0.0:
 			#TODO: Make blood explosion
+			var inst = blood_explosion_prefab.instantiate();
+			inst.global_position = global_position;
+			get_tree().root.add_child(inst);
 			queue_free();
 
 func damage(amt : int, sourcePos : Vector3):
@@ -59,7 +62,11 @@ func damage(amt : int, sourcePos : Vector3):
 	if Health <= 0: #Previously set to a high value
 		move_to_state("Die");
 		dieTimer = 1.0;
-	
+	else:
+		var inst = blood_hit_prefab.instantiate();
+		inst.global_position = sourcePos;
+		inst.global_basis.z = global_basis.z;
+		get_tree().root.add_child(inst);
 	#TODO: Add blood splatter
 	
 

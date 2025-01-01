@@ -2,6 +2,7 @@ extends Node3D
 
 @export var Demon_Ref : NodePath;
 @export var dialogue_on_grab : DialogueGrid
+@export var TouchDamage = 1;
 var initial_pickup = false;
 
 # Called when the node enters the scene tree for the first time.
@@ -21,3 +22,9 @@ func _on_pickable_object_picked_up(pickable: Variant) -> void:
 	DialogueHandler.Instance.StartDialogue(dialogue_on_grab);
 	await get_tree().create_timer(0.25).timeout;
 	PlayMusic.PlaySong("LetsPlay.mp3");
+
+
+func _on_pickable_object_body_entered(body: Node) -> void:
+	if body.is_in_group("Damagable"):
+		if body.has_signal("OnDamage"):
+			body.emit_signal("OnDamage", TouchDamage, get_node("PickableObject/BladePoint").global_position);
