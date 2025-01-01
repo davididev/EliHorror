@@ -11,9 +11,9 @@ var blood_hit_prefab : PackedScene = preload("res://Mine/Prefabs/Enemy/blood_spa
 var blood_explosion_prefab : PackedScene = preload("res://Mine/Prefabs/Enemy/blood_explosion.tscn");
 var currentFireballInstance;
 var runSpeed = 0.0;
-const MIN_SPEED = 0.5;
+const MIN_SPEED = 2.5;
 const MAX_SPEED = 6.0;
-const ACCELERATION = 10.0;
+const ACCELERATION = 20.0;
 
 var lastState = "";
 var damageTimer = 0.0;

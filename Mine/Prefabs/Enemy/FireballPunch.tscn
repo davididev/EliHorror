@@ -31,7 +31,7 @@ size = Vector2(0.5, 0.5)
 collision_layer = 2
 collision_mask = 524288
 script = ExtResource("1_c4q8j")
-Damage = 40
+Damage = 15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_smlec")
