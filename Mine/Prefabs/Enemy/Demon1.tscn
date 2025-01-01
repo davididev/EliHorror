@@ -16,6 +16,7 @@ script = ExtResource("1_avqsw")
 boneAttachRightHand = NodePath("CollisionShape3D/DemonMain/godot_rig/Skeleton3D/BoneAttachment3D")
 tree = NodePath("CollisionShape3D/DemonMain/AnimationTree")
 path_to_fireball = NodePath("CollisionShape3D/DemonMain/godot_rig/Skeleton3D/BoneAttachment3D/FireballPunch/CollisionShape3D/GPUParticles3D")
+path_to_fire_light = NodePath("CollisionShape3D/DemonMain/godot_rig/Skeleton3D/BoneAttachment3D/FireballPunch/CollisionShape3D/OmniLight3D")
 blood_hit_prefab = ExtResource("3_g3giq")
 blood_explosion_prefab = ExtResource("4_c383i")
 

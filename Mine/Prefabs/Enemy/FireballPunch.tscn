@@ -41,6 +41,7 @@ process_material = SubResource("ParticleProcessMaterial_wgcjw")
 draw_pass_1 = SubResource("QuadMesh_lujn8")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="CollisionShape3D"]
+visible = false
 light_size = 4.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
