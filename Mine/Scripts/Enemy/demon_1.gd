@@ -16,6 +16,7 @@ const MAX_SPEED = 6.0;
 const ACCELERATION = 10.0;
 
 var lastState = "";
+var damageTimer = 0.0;
 var attackTimer = -1.0;
 var dieTimer = 500.0;
 var attackStep = -1;
@@ -48,6 +49,8 @@ func move_to_state(state):
 func _process(delta: float) -> void:
 	if visible == false:
 		return;
+	if damageTimer > 0.0:
+		damageTimer -= delta;
 	var myPos = global_position;
 	var targetPos = PosVelCalc.HeadPos;
 	targetPos.y = myPos.y;
@@ -90,6 +93,9 @@ func run_towards_player(delta : float, targetPos : Vector3):
 	
 
 func damage(amt : int, sourcePos : Vector3):
+	if damageTimer > 0.0:
+		return;
+	damageTimer = 0.05;
 	Health -= amt;
 	if Health <= 0 && firstKilled: #Previously set to a high value
 		firstKilled = false;
