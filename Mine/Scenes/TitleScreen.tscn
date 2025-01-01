@@ -88,7 +88,7 @@ DialogueOnStart = ExtResource("4_x2odh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.781, 0, 0.61)
 
 [node name="Viewport2Din3D" parent="." instance=ExtResource("6_6otpb")]
-transform = Transform3D(-4.37114e-08, -0.707107, 0.707107, 0, 0.707107, 0.707107, -1, 3.09086e-08, -3.09086e-08, -7.97828, 1.40158, -0.038533)
+transform = Transform3D(-2.62268e-08, -0.424264, 0.424264, 0, 0.424264, 0.424264, -0.6, 1.85452e-08, -1.85452e-08, -7.97828, 0.844012, -0.0332847)
 screen_size = Vector2(1, 1)
 scene = ExtResource("7_ljmvi")
 viewport_size = Vector2(400, 400)
@@ -97,7 +97,7 @@ scene_properties_keys = PackedStringArray("credits_ui.gd", "creditsRef")
 creditsRef = ExtResource("8_8huhk")
 
 [node name="TitleComputer" parent="." instance=ExtResource("9_eqjex")]
-transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -8, 0, -0.032)
+transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, -8, 0, -0.032)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="TitleComputer/Cube" index="0"]
 
