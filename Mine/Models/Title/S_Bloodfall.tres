@@ -30,7 +30,7 @@ texture_repeat = 2
 
 [resource]
 code = "shader_type spatial;
-render_mode blend_mix, depth_draw_opaque, cull_disabled, diffuse_lambert, specular_disabled;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_disabled;
 
 uniform sampler2D tex_frg_3 : source_color;
 uniform sampler2D Texture2DParameter : hint_default_transparent, filter_nearest, repeat_disable;
@@ -73,7 +73,6 @@ void fragment() {
 
 }
 "
-modes/cull = 2
 modes/specular = 2
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_6tcsc")
 nodes/fragment/2/position = Vector2(60, 280)

@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bygo21jxojbsu" path="res://Mine/UI/HealthBarFG.png" id="6_6hl47"]
 
 [node name="VBoxContainer" type="Control"]
+z_index = 5
 layout_mode = 3
 anchors_preset = 0
 offset_right = 400.0

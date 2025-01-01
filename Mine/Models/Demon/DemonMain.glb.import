@@ -14431,6 +14431,14 @@ _subresources={
 "use_external/enabled": true,
 "use_external/path": "res://Mine/Models/Demon/M_Demon.tres"
 }
+},
+"nodes": {
+"PATH:godot_rig/Skeleton3D": {
+"rest_pose/external_animation_library": null
+},
+"PATH:godot_rig/Skeleton3D/Demon": {
+"mesh_instance/layers": 2
+}
 }
 }
 gltf/naming_version=1

@@ -46,6 +46,7 @@ func _on_player_body_on_damage(amt: int, hitPos: Vector3) -> void:
 	SceneVars.CurrentHealth -= amt;
 	damageTimer = DAMAGE_DELAY;
 	var inst = blood_hit_prefab.instantiate();
+	get_tree().root.add_child(inst);
 	inst.global_position = hitPos;
-	inst.global_basis.z = global_basis.z;
+	inst.global_basis.z = get_node(HeadRef).global_basis.z;
 	

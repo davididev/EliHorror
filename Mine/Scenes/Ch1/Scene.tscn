@@ -176,8 +176,8 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 
 quality = 0
 interior = true
 environment_mode = 3
-environment_custom_color = Color(0.099986, 0.099986, 0.099986, 1)
-environment_custom_energy = 0.01
+environment_custom_color = Color(0.0383971, 0.0383972, 0.0383972, 1)
+environment_custom_energy = 1.0
 light_data = ExtResource("3_4w5cm")
 
 [node name="GridMap_Floor" type="GridMap" parent="."]
@@ -217,38 +217,51 @@ data = {
 }
 
 [node name="Decal" type="Decal" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5874, -0.693031, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5874, -1.01423, -4)
+layers = 4
+size = Vector3(2, 0.1, 2)
 texture_albedo = ExtResource("4_cdu1q")
 cull_mask = 1048561
 
 [node name="Decal3" type="Decal" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.412569, -0.693031, 0)
-size = Vector3(4, 2, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.413, -1.014, 0)
+layers = 4
+size = Vector3(4, 0.2, 4)
 texture_albedo = ExtResource("5_y48pr")
 cull_mask = 1048561
 
 [node name="Decal2" type="Decal" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -10.5874, 0.478313, -5.12472)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -10.5874, 0.478313, -4.98508)
+layers = 5
+size = Vector3(2, 0.1, 2)
 texture_albedo = ExtResource("5_nrox7")
 cull_mask = 1048561
 
 [node name="Decal4" type="Decal" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.478, -5.125)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.478, -5.0117)
+layers = 4
+size = Vector3(2, 0.1, 2)
 texture_albedo = ExtResource("7_lqhca")
 cull_mask = 1048561
 
 [node name="Decal5" type="Decal" parent="."]
 transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, 0.478, 12.996)
+layers = 4
+size = Vector3(2, 0.1, 2)
 texture_albedo = ExtResource("7_lqhca")
 cull_mask = 1048561
 
 [node name="Decal6" type="Decal" parent="."]
 transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, -7, 0.478, 12.996)
+layers = 4
+size = Vector3(2, 0.1, 2)
 texture_albedo = ExtResource("7_lqhca")
 cull_mask = 1048561
 
 [node name="Decal7" type="Decal" parent="."]
 transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, -11, 0.478, 12.996)
+layers = 4
+size = Vector3(2, 0.1, 2)
 texture_albedo = ExtResource("7_lqhca")
 cull_mask = 1048561
 
@@ -312,7 +325,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.111, 0.608433, 9.97681)
 Demon_Ref = NodePath("../Demon1")
 
 [node name="Demon1" parent="." instance=ExtResource("15_lpncc")]
-transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -1.52036, -1, 10.8979)
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -1.52036, 0, 10.8979)
 
 [editable path="BedRed"]
 [editable path="Cupboard1"]

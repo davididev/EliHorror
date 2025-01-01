@@ -636,6 +636,7 @@ points = PackedVector3Array(-1, 0.0881313, -1.97032, 0, 3.85173, -0.0289541, -0.
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.200467, 0, 0.778054)
+layers = 4
 mesh = SubResource("ArrayMesh_xkssh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
@@ -645,6 +646,7 @@ shape = SubResource("ConvexPolygonShape3D_2b62v")
 
 [node name="Ceiling" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.43582, 0, 2.48627)
+layers = 4
 mesh = SubResource("ArrayMesh_kn04p")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Ceiling"]
@@ -654,6 +656,7 @@ shape = SubResource("ConvexPolygonShape3D_o7167")
 
 [node name="Wall Corner 1" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.20422, 0, -1.79283)
+layers = 4
 mesh = SubResource("ArrayMesh_yh4u3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall Corner 1"]
@@ -663,6 +666,7 @@ shape = SubResource("ConvexPolygonShape3D_wna1e")
 
 [node name="Wall Corner 2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83354, 0, -4.51715)
+layers = 4
 mesh = SubResource("ArrayMesh_7yqdj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall Corner 2"]
@@ -672,6 +676,7 @@ shape = SubResource("ConvexPolygonShape3D_dy1v8")
 
 [node name="Doorway 1" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43111, 0, -4.17947)
+layers = 4
 mesh = SubResource("ArrayMesh_b122c")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Doorway 1"]
@@ -681,6 +686,7 @@ shape = SubResource("ConvexPolygonShape3D_6w0on")
 
 [node name="Doorway 2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.85008, 0, -2.3124)
+layers = 4
 mesh = SubResource("ArrayMesh_ed4nw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Doorway 2"]
@@ -690,6 +696,7 @@ shape = SubResource("ConvexPolygonShape3D_fox1d")
 
 [node name="Doorway 3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4938, -4.76837e-07, -2.59521)
+layers = 4
 mesh = SubResource("ArrayMesh_h6505")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Doorway 3"]
@@ -699,6 +706,7 @@ shape = SubResource("ConvexPolygonShape3D_owlds")
 
 [node name="Doorway 4" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.24618, 0, -1.87896)
+layers = 4
 mesh = SubResource("ArrayMesh_yrxs0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Doorway 4"]
@@ -708,6 +716,7 @@ shape = SubResource("ConvexPolygonShape3D_m0y4i")
 
 [node name="Wall Corner 3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.696, 4.76837e-07, -0.971569)
+layers = 4
 mesh = SubResource("ArrayMesh_yewt0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall Corner 3"]
@@ -717,6 +726,7 @@ shape = SubResource("ConvexPolygonShape3D_5jwsi")
 
 [node name="Wall Corner 4" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.00334, 0, -13.1831)
+layers = 4
 mesh = SubResource("ArrayMesh_glar3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall Corner 4"]
@@ -726,6 +736,7 @@ shape = SubResource("ConvexPolygonShape3D_jbtsr")
 
 [node name="Wall 3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.6104, 0, 16.2344)
+layers = 4
 mesh = SubResource("ArrayMesh_7p6ih")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall 3"]
@@ -735,6 +746,7 @@ shape = SubResource("ConvexPolygonShape3D_tvf50")
 
 [node name="Wall 4" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.99539, 0, 11.2867)
+layers = 4
 mesh = SubResource("ArrayMesh_sh2g7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall 4"]
@@ -744,6 +756,7 @@ shape = SubResource("ConvexPolygonShape3D_odgg7")
 
 [node name="Edge 1" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4697, 0, 9.01939)
+layers = 4
 mesh = SubResource("ArrayMesh_sukux")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Edge 1"]
@@ -753,6 +766,7 @@ shape = SubResource("ConvexPolygonShape3D_0cyao")
 
 [node name="Edge 2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.2691, 0, 10.0547)
+layers = 4
 mesh = SubResource("ArrayMesh_e2gxa")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Edge 2"]
@@ -762,6 +776,7 @@ shape = SubResource("ConvexPolygonShape3D_sila0")
 
 [node name="Edge 3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2373, 0, 7.93576)
+layers = 4
 mesh = SubResource("ArrayMesh_tmd5q")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Edge 3"]
@@ -771,6 +786,7 @@ shape = SubResource("ConvexPolygonShape3D_chxs1")
 
 [node name="Edge 4" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9689, 0, 6.93883)
+layers = 4
 mesh = SubResource("ArrayMesh_ji6tk")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Edge 4"]
@@ -780,6 +796,7 @@ shape = SubResource("ConvexPolygonShape3D_jr2n7")
 
 [node name="Wall 1" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1387, 4.76837e-07, 9.01822)
+layers = 4
 mesh = SubResource("ArrayMesh_lh3cw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall 1"]
@@ -789,6 +806,7 @@ shape = SubResource("ConvexPolygonShape3D_fbo7r")
 
 [node name="Wall 2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.476, 0, 12.1058)
+layers = 4
 mesh = SubResource("ArrayMesh_pweta")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall 2"]

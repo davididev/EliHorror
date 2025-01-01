@@ -4,6 +4,7 @@
 [ext_resource type="Material" uid="uid://35dbyjf0tx3b" path="res://Mine/Particles/M_Fireball.tres" id="1_vpg1x"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_smlec"]
+radius = 1.0
 
 [sub_resource type="CurveTexture" id="CurveTexture_c0mkx"]
 
@@ -30,6 +31,7 @@ size = Vector2(0.5, 0.5)
 collision_layer = 2
 collision_mask = 524288
 script = ExtResource("1_c4q8j")
+Damage = 40
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_smlec")

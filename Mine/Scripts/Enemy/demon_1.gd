@@ -10,6 +10,10 @@ extends CharacterBody3D
 var blood_hit_prefab : PackedScene = preload("res://Mine/Prefabs/Enemy/blood_spatter_1.tscn");
 var blood_explosion_prefab : PackedScene = preload("res://Mine/Prefabs/Enemy/blood_explosion.tscn");
 var currentFireballInstance;
+var runSpeed = 0.0;
+const MIN_SPEED = 0.5;
+const MAX_SPEED = 6.0;
+const ACCELERATION = 10.0;
 
 var lastState = "";
 var attackTimer = -1.0;
@@ -22,13 +26,14 @@ signal OnDamage(amt : int, hitPos : Vector3);
 func SetActive(act : bool):
 	visible = act;
 	set_physics_process(act);
+	set_process(act);
 
 func _init() -> void:
 	lastState = "";
 	attackTimer = -1.0;
 	attackStep = -1;
 	firstKilled = true;
-	move_to_state("Idle");
+	#move_to_state("Idle");
 	SetActive(ActiveOnStart);
 
 #Move to state if not already in state
@@ -36,7 +41,9 @@ func move_to_state(state):
 	if lastState == state:
 		return;
 	lastState = state;
-	get_node(tree).travel(state);
+	var state_machine = get_node(tree)["parameters/playback"]
+	
+	state_machine.travel(state);
 
 func _process(delta: float) -> void:
 	if visible == false:
@@ -46,9 +53,10 @@ func _process(delta: float) -> void:
 	targetPos.y = myPos.y;
 	
 	var dist = myPos.distance_to(targetPos);
-	if dist < 2.0:
+	if dist < 1.5:
 		run_attack_step(delta);
-	
+	else:
+		run_towards_player(delta, targetPos);
 	if Health > 0:
 		dieTimer = 500.0;
 	else:
@@ -59,6 +67,24 @@ func _process(delta: float) -> void:
 			inst.global_position = global_position;
 			get_tree().root.add_child(inst);
 			queue_free();
+	move_and_slide();
+	
+func run_towards_player(delta : float, targetPos : Vector3):
+	move_to_state("Run");
+	runSpeed += ACCELERATION * delta;
+	runSpeed = clamp(runSpeed, MIN_SPEED, MAX_SPEED);
+	
+	var col = get_node("CollisionShape3D/DemonMain");
+	var look_at_node = get_node("LookAtTransofrm");
+	look_at_node.look_at(targetPos, Vector3(0.0, 1.0, 0.0), true);
+	var current_angle = col.rotation_degrees;
+	current_angle.y = look_at_node.rotation_degrees.y;
+	col.rotation_degrees = current_angle;
+	velocity = -col.basis.z * runSpeed;
+	velocity.y = -1.0;
+	
+	
+	
 
 func damage(amt : int, sourcePos : Vector3):
 	Health -= amt;
@@ -77,25 +103,28 @@ func damage(amt : int, sourcePos : Vector3):
 	
 
 func run_attack_step(delta : float):
+	velocity = Vector3.ZERO;
 	attackTimer -= delta;
+	runSpeed = MIN_SPEED;
 	if attackStep == -1:
 		if attackTimer <= 0.0:
 			move_to_state("Attack");
 			attackStep = 0;	
-			attackTimer = 1.0;
+			attackTimer = 0.5; #Before we set off the fireball
 		return;
-	if attackStep == 0: #Before we set off the fireball
+	if attackStep == 0: 
 		if attackTimer <= 0.0:
 			attackStep = 1;
-			attackTimer = 2.0;
+			attackTimer = 1.5; #After we create the fireball and before we end aniumation
 			get_node(path_to_fireball).emitting = true;
 			get_node(path_to_fire_light).visible = true;
-	if attackStep == 1: #After we create the fireball and before we end aniumation
+		return;
+	if attackStep == 1: 
 		if attackTimer <= 0.0:
 			get_node(path_to_fireball).emitting = false;
 			get_node(path_to_fire_light).visible = false;
 			attackStep = -1;
-			attackTimer = 0.2;
+			attackTimer = 0.5;
 			move_to_state("Idle");
 		return;
 		
