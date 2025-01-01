@@ -25,7 +25,7 @@ func _on_pickable_object_picked_up(pickable: Variant) -> void:
 	PlayMusic.PlaySong("LetsPlay.mp3");
 
 
-func _on_pickable_object_body_entered(body: Node) -> void:
+func _on_pickable_object_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Damagable"):
 		if body.has_signal("OnDamage"):
 			body.emit_signal("OnDamage", TouchDamage, get_node("PickableObject/BladePoint").global_position);

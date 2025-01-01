@@ -10,13 +10,14 @@
 radius = 0.3
 
 [node name="Demon1" type="CharacterBody3D" groups=["Damagable"]]
-collision_layer = 2
+collision_layer = 32
 collision_mask = 65539
 script = ExtResource("1_avqsw")
 boneAttachRightHand = NodePath("CollisionShape3D/DemonMain/godot_rig/Skeleton3D/BoneAttachment3D")
 tree = NodePath("CollisionShape3D/DemonMain/AnimationTree")
 path_to_fireball = NodePath("CollisionShape3D/DemonMain/godot_rig/Skeleton3D/BoneAttachment3D/FireballPunch/CollisionShape3D/GPUParticles3D")
 path_to_fire_light = NodePath("CollisionShape3D/DemonMain/godot_rig/Skeleton3D/BoneAttachment3D/FireballPunch/CollisionShape3D/OmniLight3D")
+Health = 6
 dialogueOnDeath = ExtResource("2_3n8rf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -248,6 +249,8 @@ tree_root = ExtResource("3_kek88")
 anim_player = NodePath("../AnimationPlayer")
 
 [node name="LookAtTransofrm" type="Node3D" parent="."]
+
+[connection signal="OnDamage" from="." to="." method="damage"]
 
 [editable path="CollisionShape3D/DemonMain"]
 [editable path="CollisionShape3D/DemonMain/godot_rig/Skeleton3D/BoneAttachment3D/FireballPunch"]

@@ -51,8 +51,6 @@ switch_mode = 2
 switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hk4q8"]
-switch_mode = 2
-advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_05154"]
 
@@ -73,4 +71,4 @@ states/Stagger/position = Vector2(352, 288.619)
 states/StaggerStart/node = SubResource("AnimationNodeAnimation_shett")
 states/StaggerStart/position = Vector2(433, 214)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_ajjr8"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_s2le8"), "Run", "Attack", SubResource("AnimationNodeStateMachineTransition_v5fb6"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_4a0g4"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_3e3m3"), "Attack", "Run", SubResource("AnimationNodeStateMachineTransition_qjm4b"), "Run", "StaggerStart", SubResource("AnimationNodeStateMachineTransition_jrkc4"), "Idle", "StaggerStart", SubResource("AnimationNodeStateMachineTransition_arnji"), "StaggerStart", "GetUp", SubResource("AnimationNodeStateMachineTransition_4vm2y"), "GetUp", "Run", SubResource("AnimationNodeStateMachineTransition_gx7ey"), "GetUp", "Idle", SubResource("AnimationNodeStateMachineTransition_y0uni"), "StaggerStart", "Stagger", SubResource("AnimationNodeStateMachineTransition_3j0wm"), "StaggerStart", "Die", SubResource("AnimationNodeStateMachineTransition_hk4q8"), "Stagger", "GetUp", SubResource("AnimationNodeStateMachineTransition_05154")]
-graph_offset = Vector2(-28, 42.479)
+graph_offset = Vector2(-20, 140.479)

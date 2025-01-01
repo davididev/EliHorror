@@ -70,6 +70,9 @@ func _process(delta: float) -> void:
 	move_and_slide();
 	
 func run_towards_player(delta : float, targetPos : Vector3):
+	if Health <= 0:
+		velocity = Vector3.ZERO;
+		return;
 	move_to_state("Run");
 	runSpeed += ACCELERATION * delta;
 	runSpeed = clamp(runSpeed, MIN_SPEED, MAX_SPEED);
@@ -93,17 +96,19 @@ func damage(amt : int, sourcePos : Vector3):
 		if dialogueOnDeath != null:
 			DialogueHandler.Instance.StartDialogue(dialogueOnDeath);
 		move_to_state("Die");
-		dieTimer = 1.0;
+		dieTimer = 1.6;
 	else:
 		var inst = blood_hit_prefab.instantiate();
 		inst.global_position = sourcePos;
-		inst.global_basis.z = global_basis.z;
+		inst.global_basis.z = get_node("CollisionShape3D/DemonMain").global_basis.z;
 		get_tree().root.add_child(inst);
 	#TODO: Add blood splatter
 	
 
 func run_attack_step(delta : float):
 	velocity = Vector3.ZERO;
+	if Health <= 0:
+		return;
 	attackTimer -= delta;
 	runSpeed = MIN_SPEED;
 	if attackStep == -1:
