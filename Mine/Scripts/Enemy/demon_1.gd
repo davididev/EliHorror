@@ -6,6 +6,7 @@ extends CharacterBody3D
 @export var path_to_fire_light : NodePath;
 @export var Health = 2;
 @export var ActiveOnStart = false;
+@export var dialogueOnDeath : DialogueGrid
 var blood_hit_prefab : PackedScene = preload("res://Mine/Prefabs/Enemy/blood_spatter_1.tscn");
 var blood_explosion_prefab : PackedScene = preload("res://Mine/Prefabs/Enemy/blood_explosion.tscn");
 var currentFireballInstance;
@@ -60,6 +61,8 @@ func _process(delta: float) -> void:
 func damage(amt : int, sourcePos : Vector3):
 	Health -= amt;
 	if Health <= 0: #Previously set to a high value
+		if dialogueOnDeath != null:
+			DialogueHandler.Instance.StartDialogue(dialogueOnDeath);
 		move_to_state("Die");
 		dieTimer = 1.0;
 	else:

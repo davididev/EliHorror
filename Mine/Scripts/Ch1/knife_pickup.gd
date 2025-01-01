@@ -20,6 +20,7 @@ func _on_pickable_object_picked_up(pickable: Variant) -> void:
 		return;
 	initial_pickup = true;
 	DialogueHandler.Instance.StartDialogue(dialogue_on_grab);
+	get_node(Demon_Ref).call("SetActive", true);
 	await get_tree().create_timer(0.25).timeout;
 	PlayMusic.PlaySong("LetsPlay.mp3");
 

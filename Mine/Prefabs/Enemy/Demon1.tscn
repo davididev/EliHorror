@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://50nxbnbenlym"]
+[gd_scene load_steps=7 format=3 uid="uid://50nxbnbenlym"]
 
 [ext_resource type="Script" path="res://Mine/Scripts/Enemy/demon_1.gd" id="1_avqsw"]
+[ext_resource type="Resource" path="res://DialogueSystem/output/Ch1_demon2.res" id="2_3n8rf"]
 [ext_resource type="PackedScene" uid="uid://o4ynljtclwor" path="res://Mine/Prefabs/Enemy/FireballPunch.tscn" id="2_nttjy"]
 [ext_resource type="PackedScene" uid="uid://hi33gxb1tou5" path="res://Mine/Models/Demon/DemonMain.glb" id="2_penah"]
-[ext_resource type="PackedScene" uid="uid://ieljke23d62o" path="res://Mine/Prefabs/Enemy/blood_spatter_1.tscn" id="3_g3giq"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://c6t0j1sfbnng8" path="res://Mine/Models/Demon/Anim/AT_Demon1.tres" id="3_kek88"]
-[ext_resource type="PackedScene" uid="uid://cd6dgng7jutp2" path="res://Mine/Prefabs/Enemy/blood_explosion.tscn" id="4_c383i"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hmn41"]
 
@@ -17,8 +16,7 @@ boneAttachRightHand = NodePath("CollisionShape3D/DemonMain/godot_rig/Skeleton3D/
 tree = NodePath("CollisionShape3D/DemonMain/AnimationTree")
 path_to_fireball = NodePath("CollisionShape3D/DemonMain/godot_rig/Skeleton3D/BoneAttachment3D/FireballPunch/CollisionShape3D/GPUParticles3D")
 path_to_fire_light = NodePath("CollisionShape3D/DemonMain/godot_rig/Skeleton3D/BoneAttachment3D/FireballPunch/CollisionShape3D/OmniLight3D")
-blood_hit_prefab = ExtResource("3_g3giq")
-blood_explosion_prefab = ExtResource("4_c383i")
+dialogueOnDeath = ExtResource("2_3n8rf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_hmn41")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://bvetrr1mx0i6u"]
+[gd_scene load_steps=28 format=4 uid="uid://bvetrr1mx0i6u"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/staging/scene_base.gd" id="1_p20mv"]
 [ext_resource type="PackedScene" uid="uid://ddyo2jv7628sa" path="res://VR/Prefabs/player_boilerplate.tscn" id="2_av1p6"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://v40tkq454bxv" path="res://Mine/Prefabs/Pickables/Flashlight.tscn" id="10_qapw2"]
 [ext_resource type="Script" path="res://VR/Scripts/Misc/SceneVars.gd" id="13_y5qe2"]
 [ext_resource type="PackedScene" uid="uid://cvjslrdg6ivqe" path="res://Mine/Prefabs/Pickables/Knife.tscn" id="14_3hw0e"]
+[ext_resource type="PackedScene" uid="uid://50nxbnbenlym" path="res://Mine/Prefabs/Enemy/Demon1.tscn" id="15_lpncc"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ff27i"]
 lightmap_size_hint = Vector2i(534, 530)
@@ -308,6 +309,10 @@ MusicPath = "DarkLoop.mp3"
 
 [node name="Knife" parent="." instance=ExtResource("14_3hw0e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.111, 0.608433, 9.97681)
+Demon_Ref = NodePath("../Demon1")
+
+[node name="Demon1" parent="." instance=ExtResource("15_lpncc")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -1.52036, -1, 10.8979)
 
 [editable path="BedRed"]
 [editable path="Cupboard1"]
