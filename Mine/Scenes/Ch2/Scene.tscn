@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cyk5xgkd6wx3c"]
+[gd_scene load_steps=6 format=3 uid="uid://cyk5xgkd6wx3c"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/staging/scene_base.gd" id="1_8540p"]
 [ext_resource type="PackedScene" uid="uid://ddyo2jv7628sa" path="res://VR/Prefabs/player_boilerplate.tscn" id="2_pv6dw"]
 [ext_resource type="Script" path="res://VR/Scripts/Misc/SceneVars.gd" id="3_fpscd"]
+[ext_resource type="PackedScene" uid="uid://mociajypxykj" path="res://Mine/Prefabs/Ch2/inside_cell.tscn" id="4_q8f25"]
+[ext_resource type="LightmapGIData" uid="uid://dyu7d76d5r648" path="res://Mine/Scenes/Ch2/Scene.lmbake" id="5_eorh5"]
 
 [node name="XRToolsSceneBase" type="Node3D"]
 script = ExtResource("1_8540p")
@@ -13,3 +15,12 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 
 [node name="SceneVars" type="Node3D" parent="."]
 script = ExtResource("3_fpscd")
 MusicPath = "DarkLoop.mp3"
+
+[node name="InsideCell" parent="." instance=ExtResource("4_q8f25")]
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+quality = 0
+environment_mode = 3
+environment_custom_color = Color(0.0383972, 0.0383972, 0.0383972, 1)
+environment_custom_energy = 1.0
+light_data = ExtResource("5_eorh5")

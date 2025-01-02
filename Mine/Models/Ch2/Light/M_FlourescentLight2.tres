@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d20vmi7qirk6"]
+
+[ext_resource type="Texture2D" uid="uid://jsvom4ij5xf2" path="res://Mine/Models/Ch2/Light/LightUV Cracked.png" id="1_hv23q"]
+
+[resource]
+albedo_texture = ExtResource("1_hv23q")

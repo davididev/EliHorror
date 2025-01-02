@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=4 uid="uid://36k0divhiouu"]
+
+[ext_resource type="Material" uid="uid://dp653mvfab2ju" path="res://Mine/Models/Ch2/Light/M_FlourescentLight1.tres" id="1_odyi5"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xvmus"]
+_surfaces = [{
+"aabb": AABB(-2, 0, -1, 4, 1, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAACAAEAAAADAAIABAAGAAcABAAFAAYAAAAFAAQAAAABAAUAAQAGAAUAAQACAAYAAgAHAAYAAgADAAcABAADAAAABAAHAAMA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/v8AAAAAAAD+/wAA/v8AAAAAAAD+/wAAAAAAAAAAAAD/////AAAAAP7//////wAAAAD///7/AAAAAP//AAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_dwgpc"]
+resource_name = "FlourescentLight_Flourescent Light"
+lightmap_size_hint = Vector2i(130, 110)
+_surfaces = [{
+"aabb": AABB(-2, 0, -1, 4, 1, 2),
+"attribute_data": PackedByteArray("AACAPwD//z7BD3w7lSDPPgAAAAAAAAAACH4gP1j7Rj8AAIA/AAAAAMEPfDtY+0Y/AAAAAAD//z4IfiA/lSDPPgAAgD/A/z8/CH4gPwnylDsAAAAAAACAP6E3fDvkKcE+AAAAAMD/Pz/BD3w7vyGVOwD/fz8AAIA/kH0gP+QpwT4AAIA/wP8/P1upVT8Oax8/AAAAAAD//z7wA38/HNZ+PwAAgD8A//8+8AN/Pw5rHz8AAAAAwP8/P1upVT+91X4/AACAP8D/Pz/dyA09sfZNPwAAAAAA//8+hl4oPxzWfj8A/38/AP//Pt3IDT0c1n4/AAAAAMD/Pz+GXig/sfZNPwAAgD/A/z8/8AN/PyXI0z4AAAAAAP//PlupVT9KkCc9AACAPwD//z5bqVU/JcjTPgAAAADA/z8/8AN/P0qQJz0AAAAAAP//PvzATz9Y+0Y/AACAP8D/Pz9mZiY/SpAnPQAAAADA/z8/ZmYmP5z6Rj8AAIA/AP//PvzATz9KkCc9"),
+"format": 34359742519,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": ExtResource("1_odyi5"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("Cv7/PwAAAAADAIC/AwAAwAAAAAAK/n8/Cv7/PwAAAAAK/n8/AwAAwAAAAAADAIC/BQAAQAAAgD8DAIC/AwAAwAAAgD8K/n8/AwAAwAAAgD8DAIC/Cv7/PwAAgD8FAIA/Cv7/PwAAAAADAIC/Cv7/PwAAgD8FAIA/BQAAQAAAgD8DAIC/Cv7/PwAAAAAK/n8/Cv7/PwAAAAAK/n8/AwAAwAAAgD8K/n8/Cv7/PwAAgD8FAIA/AwAAwAAAAAAK/n8/AwAAwAAAAAAK/n8/AwAAwAAAgD8DAIC/AwAAwAAAgD8K/n8/AwAAwAAAAAADAIC/BQAAQAAAgD8DAIC/AwAAwAAAAAADAIC/Cv7/PwAAAAADAIC/AwAAwAAAgD8DAIC/AIABAP7//78AgAEA/v//vwCAAQD+//+/AIABAP7//78AgP3//v/+vwCA/f/+//6//3/9//7//78AgP3//v/+v/3/AID+//7//f8AgP7//v/9/wCA/v/+//3/AID+//7//X//f/3//7/9f/9//f//v/1//3/9//+//X//f/3//78BAP9/AID/vwEA/38AgP+/AQD/fwCA/78BAP9/AID/v/7/AAAAAP+//v8AAAAA/7/+/wAAAAD/v/7/AAAAAP+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_xvmus")
+
+[node name="FlourescentLight Normal" type="Node3D"]
+transform = Transform3D(1.19249e-08, 0, 1, 0, 1, 0, -1, 0, 1.19249e-08, -3.01972, 5.5828, -2.8283)
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("ArrayMesh_dwgpc")
+skeleton = NodePath("")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Cube"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.748614, 0)
+light_energy = 0.2
+light_indirect_energy = 0.2
+light_size = 15.0
+light_specular = 0.2
+light_bake_mode = 1
