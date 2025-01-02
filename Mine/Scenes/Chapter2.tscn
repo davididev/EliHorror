@@ -1,0 +1,67 @@
+[gd_scene load_steps=12 format=3 uid="uid://btjhd8bxqm62v"]
+
+[ext_resource type="Script" path="res://addons/godot-xr-tools/staging/scene_base.gd" id="1_rfdl3"]
+[ext_resource type="PackedScene" uid="uid://ddyo2jv7628sa" path="res://VR/Prefabs/player_boilerplate.tscn" id="2_4m61n"]
+[ext_resource type="PackedScene" uid="uid://dnd07mqihef83" path="res://Mine/Models/Title/PortalField.glb" id="3_xm5gv"]
+[ext_resource type="Material" uid="uid://cw08xl4v2yoic" path="res://Mine/Models/ProceduralBackground.tres" id="4_bb1uh"]
+[ext_resource type="Script" path="res://VR/Scripts/Misc/SceneVars.gd" id="5_mvltd"]
+[ext_resource type="Resource" path="res://DialogueSystem/output/Chapter2_Intro.res" id="6_ay4fe"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d4hsu"]
+size = Vector3(4, 1, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sp6ji"]
+size = Vector3(4, 4, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vnj1m"]
+size = Vector3(1, 4, 4)
+
+[sub_resource type="Sky" id="Sky_pcav2"]
+sky_material = ExtResource("4_bb1uh")
+
+[sub_resource type="Environment" id="Environment_tq068"]
+background_mode = 2
+sky = SubResource("Sky_pcav2")
+
+[node name="XRToolsSceneBase" type="Node3D"]
+script = ExtResource("1_rfdl3")
+
+[node name="XROrigin3D" parent="." instance=ExtResource("2_4m61n")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="PortalField" parent="." instance=ExtResource("3_xm5gv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PortalField"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PortalField/StaticBody3D"]
+shape = SubResource("BoxShape3D_d4hsu")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="PortalField/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
+shape = SubResource("BoxShape3D_sp6ji")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="PortalField/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 2)
+shape = SubResource("BoxShape3D_sp6ji")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="PortalField/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
+shape = SubResource("BoxShape3D_vnj1m")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="PortalField/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
+shape = SubResource("BoxShape3D_vnj1m")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tq068")
+
+[node name="SceneVars" type="Node3D" parent="."]
+script = ExtResource("5_mvltd")
+MusicPath = "Mystery Manor.mp3"
+DialogueOnStart = ExtResource("6_ay4fe")
+ChapterHeader = "Chapter 2"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 4, 0)

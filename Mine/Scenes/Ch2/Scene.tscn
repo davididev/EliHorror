@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyk5xgkd6wx3c"]
+
+[ext_resource type="Script" path="res://addons/godot-xr-tools/staging/scene_base.gd" id="1_8540p"]
+[ext_resource type="PackedScene" uid="uid://ddyo2jv7628sa" path="res://VR/Prefabs/player_boilerplate.tscn" id="2_pv6dw"]
+[ext_resource type="Script" path="res://VR/Scripts/Misc/SceneVars.gd" id="3_fpscd"]
+
+[node name="XRToolsSceneBase" type="Node3D"]
+script = ExtResource("1_8540p")
+
+[node name="XROrigin3D" parent="." instance=ExtResource("2_pv6dw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="SceneVars" type="Node3D" parent="."]
+script = ExtResource("3_fpscd")
+MusicPath = "DarkLoop.mp3"

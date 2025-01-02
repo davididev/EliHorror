@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://50nxbnbenlym"]
 
 [ext_resource type="Script" path="res://Mine/Scripts/Enemy/demon_1.gd" id="1_avqsw"]
-[ext_resource type="Resource" uid="uid://ch36t0pcgym3f" path="res://DialogueSystem/output/Ch1_demon2.res" id="2_3n8rf"]
+[ext_resource type="Resource" uid="uid://bovtuv5g03xxo" path="res://DialogueSystem/output/Ch1_demon2.res" id="2_3n8rf"]
 [ext_resource type="PackedScene" uid="uid://o4ynljtclwor" path="res://Mine/Prefabs/Enemy/FireballPunch.tscn" id="2_nttjy"]
 [ext_resource type="PackedScene" uid="uid://hi33gxb1tou5" path="res://Mine/Models/Demon/DemonMain.glb" id="2_penah"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://c6t0j1sfbnng8" path="res://Mine/Models/Demon/Anim/AT_Demon1.tres" id="3_kek88"]
