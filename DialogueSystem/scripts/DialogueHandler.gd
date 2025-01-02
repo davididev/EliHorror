@@ -13,9 +13,13 @@ static var CurrentY : int = 0;
 static var variables : Dictionary;
 static var Selected_Choice = -1;
 var _scene_base : XRToolsSceneBase
+var lastFadeColor : Color;
+static var FadeColor : Color;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	FadeColor = Color(1.0, 1.0, 1.0, 0.0);
+	lastFadeColor = Color(1.0, 1.0, 1.0, 0.0);
 	#DialogueHandler.IsRunning = false;
 	Instance = self;
 	_scene_base = XRTools.find_xr_ancestor(self, "*", "XRToolsSceneBase")
@@ -278,7 +282,11 @@ func EndDialogue():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass;
+	if lastFadeColor != FadeColor:
+		lastFadeColor = FadeColor;
+		var mat = get_node(FlashImage).get_surface_override_material(0) as StandardMaterial3D;
+		mat.albedo_color = FadeColor;
+		get_node(FlashImage).set_surface_override_material(0, mat);
 
 
 func _on_button_choice_1_pressed() -> void:

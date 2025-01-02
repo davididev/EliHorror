@@ -21,7 +21,9 @@ var blood_hit_prefab : PackedScene = preload("res://Mine/Prefabs/Enemy/blood_spa
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	damage_color_alpha = 0.0;
+	damage_color_alpha_target = 0.0;
+	damageRoutine = false;
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -33,12 +35,24 @@ func _process(delta: float) -> void:
 	RightHandVel = abs((_last_right_hand_position - get_node(RightHandRef).position)) / delta;
 	HeadVel = abs((_last_head_position - get_node(HeadRef).position)) / delta;
 	
-	
 	_last_left_hand_position = get_node(LeftHandRef).position;
 	_last_right_hand_position = get_node(RightHandRef).position
 	_last_head_position = get_node(HeadRef).position;
 	if damageTimer > 0.0:
 		damageTimer -= delta;
+
+	if damageRoutine == true:
+		damage_color_alpha = move_toward(damage_color_alpha, damage_color_alpha_target, 4.0 * delta);
+		if is_equal_approx(damage_color_alpha, 1.0):
+			damage_color_alpha_target = 0.0;
+		if is_equal_approx(damage_color_alpha, 0.0):
+			damageRoutine = false;
+		DialogueHandler.FadeColor = Color(1.0, 0.0, 0.0, damage_color_alpha);
+	
+
+var damage_color_alpha = 0.0;
+var damage_color_alpha_target = 0.0;
+var damageRoutine = false;
 
 func _on_player_body_on_damage(amt: int, hitPos: Vector3) -> void:
 	if damageTimer > 0.0:
@@ -49,4 +63,6 @@ func _on_player_body_on_damage(amt: int, hitPos: Vector3) -> void:
 	get_tree().root.add_child(inst);
 	inst.global_position = hitPos;
 	inst.global_basis.z = get_node(HeadRef).global_basis.z;
+	damageRoutine = true;
+	damage_color_alpha_target = 1.0;
 	
