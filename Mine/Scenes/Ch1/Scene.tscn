@@ -307,7 +307,7 @@ mesh = SubResource("ArrayMesh_2tpda")
 shape = SubResource("ConvexPolygonShape3D_gc6t0")
 
 [node name="Flashlighjt" parent="." instance=ExtResource("10_qapw2")]
-transform = Transform3D(-1, 0, -1.50996e-07, -1.50996e-07, -4.37114e-08, 1, -6.60024e-15, 1, 4.37114e-08, 4.22837, 0.798768, -2.68745)
+transform = Transform3D(4.37114e-08, -1, -4.37114e-08, -1.50996e-07, -4.37114e-08, 1, -1, -4.37114e-08, -1.50996e-07, 4.22837, 0.798768, -2.68745)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -4)
