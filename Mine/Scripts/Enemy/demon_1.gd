@@ -106,7 +106,8 @@ func damage(amt : int, sourcePos : Vector3):
 	else:
 		var inst = blood_hit_prefab.instantiate();
 		inst.global_position = sourcePos;
-		inst.global_basis.z = get_node("CollisionShape3D/DemonMain").global_basis.z;
+		#inst.global_basis.z = get_node("CollisionShape3D/DemonMain").global_basis.z;
+		inst.global_rotation_degrees = get_node("CollisionShape3D/DemonMain").global_rotation_degrees
 		get_tree().root.add_child(inst);
 	#TODO: Add blood splatter
 	
