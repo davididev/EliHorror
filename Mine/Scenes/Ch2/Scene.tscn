@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyk5xgkd6wx3c"]
+[gd_scene load_steps=7 format=3 uid="uid://cyk5xgkd6wx3c"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/staging/scene_base.gd" id="1_8540p"]
 [ext_resource type="PackedScene" uid="uid://ddyo2jv7628sa" path="res://VR/Prefabs/player_boilerplate.tscn" id="2_pv6dw"]
 [ext_resource type="Script" path="res://VR/Scripts/Misc/SceneVars.gd" id="3_fpscd"]
 [ext_resource type="PackedScene" uid="uid://mociajypxykj" path="res://Mine/Prefabs/Ch2/inside_cell.tscn" id="4_q8f25"]
 [ext_resource type="LightmapGIData" uid="uid://dyu7d76d5r648" path="res://Mine/Scenes/Ch2/Scene.lmbake" id="5_eorh5"]
+[ext_resource type="MeshLibrary" uid="uid://44cl1me5n1xi" path="res://Mine/Models/Modular/Mental Hospital/MentalHospitalMeshLibrary.tres" id="6_oxs23"]
 
 [node name="XRToolsSceneBase" type="Node3D"]
 script = ExtResource("1_8540p")
@@ -25,3 +26,23 @@ environment_mode = 3
 environment_custom_color = Color(0.0383972, 0.0383972, 0.0383972, 1)
 environment_custom_energy = 1.0
 light_data = ExtResource("5_eorh5")
+
+[node name="GridMap_Floors" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, -1)
+mesh_library = ExtResource("6_oxs23")
+cell_size = Vector3(2, 1, 2)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(131069, 0, 1, 131069, 65535, 1, 131069, 1, 1, 131068, 1, 1, 131068, 0, 1, 131068, 65535, 1, 131069, 2, 1, 131068, 2, 1, 131069, 3, 1, 131069, 4, 1, 131068, 4, 1, 131068, 3, 1, 131069, 5, 1, 131068, 5, 1, 131067, 5, 1, 131067, 4, 1, 131067, 3, 1, 131067, 2, 1, 131067, 1, 1, 131067, 0, 1, 131067, 65535, 1, 131068, 65534, 1, 131069, 65534, 1, 131067, 65534, 1, 131066, 65535, 1, 131066, 65534, 1, 131066, 0, 1, 131066, 1, 1, 131066, 2, 1, 131065, 2, 1, 131065, 3, 1, 131065, 4, 1, 131065, 5, 1, 131066, 5, 1, 131066, 4, 1, 131066, 3, 1)
+}
+metadata/_editor_floor_ = Vector3(0, 1, 0)
+
+[node name="GridMap_Walls" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -1)
+mesh_library = ExtResource("6_oxs23")
+cell_size = Vector3(2, 1, 2)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(65533, 0, 655363, 65533, 65534, 1048576, 65532, 65534, 1441796, 65531, 65534, 1441796, 65530, 65534, 655360, 65530, 0, 5)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
