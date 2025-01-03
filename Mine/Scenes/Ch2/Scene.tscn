@@ -17,6 +17,7 @@ script = ExtResource("3_fpscd")
 MusicPath = "DarkLoop.mp3"
 
 [node name="InsideCell" parent="." instance=ExtResource("4_q8f25")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -4, -2, 3)
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
 quality = 0
