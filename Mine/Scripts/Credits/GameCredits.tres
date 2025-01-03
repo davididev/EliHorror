@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CreditsRoot" load_steps=16 format=3 uid="uid://c08sqlr6rc60a"]
+[gd_resource type="Resource" script_class="CreditsRoot" load_steps=17 format=3 uid="uid://c08sqlr6rc60a"]
 
 [ext_resource type="Script" path="res://Mine/Scripts/Credits/CreditsCategory.gd" id="1_3h8ov"]
 [ext_resource type="Script" path="res://Mine/Scripts/Credits/CreditsEntry.gd" id="1_7f811"]
@@ -39,10 +39,15 @@ script = ExtResource("1_7f811")
 Item = "Let's Play With Demons"
 Source = "Patrick de Arteaga @ patrickdearteaga.com."
 
+[sub_resource type="Resource" id="Resource_nrb6l"]
+script = ExtResource("1_7f811")
+Item = "Lab Music"
+Source = "brandon75689 @ opengameart.org"
+
 [sub_resource type="Resource" id="Resource_1xl8q"]
 script = ExtResource("1_3h8ov")
 CategoryName = "Music"
-entries = Array[ExtResource("1_7f811")]([SubResource("Resource_ey6e5"), SubResource("Resource_iju8r"), SubResource("Resource_ses3o")])
+entries = Array[ExtResource("1_7f811")]([SubResource("Resource_ey6e5"), SubResource("Resource_iju8r"), SubResource("Resource_ses3o"), SubResource("Resource_nrb6l")])
 
 [sub_resource type="Resource" id="Resource_dlcsn"]
 script = ExtResource("1_7f811")
