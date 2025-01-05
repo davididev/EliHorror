@@ -173,7 +173,6 @@ script = ExtResource("1_p20mv")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
-quality = 0
 interior = true
 environment_mode = 3
 environment_custom_color = Color(0.0383971, 0.0383972, 0.0383972, 1)
