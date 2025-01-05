@@ -238,6 +238,10 @@ bone_name = "DEF-hand.L"
 bone_idx = 13
 
 [node name="FireballPunch" parent="CollisionShape3D/DemonMain/godot_rig/Skeleton3D/BoneAttachment3D" instance=ExtResource("2_nttjy")]
+monitorable = false
+
+[node name="GPUParticles3D" parent="CollisionShape3D/DemonMain/godot_rig/Skeleton3D/BoneAttachment3D/FireballPunch/CollisionShape3D" index="0"]
+layers = 2
 
 [node name="AnimationTree" type="AnimationTree" parent="CollisionShape3D/DemonMain"]
 tree_root = ExtResource("3_kek88")
