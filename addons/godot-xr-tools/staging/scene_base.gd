@@ -205,3 +205,7 @@ func reset_scene(user_data = null) -> void:
 ## Custom scene classes can override this method to add their logic.
 func quit() -> void:
 	emit_signal("request_quit")
+
+
+func _on_rigid_body_3d_body_entered(body: Node) -> void:
+	pass # Replace with function body.
