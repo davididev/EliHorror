@@ -46,7 +46,7 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("2_ace66")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Cube"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -2.41097, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.41097, 0)
 light_energy = 0.2
 light_indirect_energy = 0.2
 light_size = 15.0

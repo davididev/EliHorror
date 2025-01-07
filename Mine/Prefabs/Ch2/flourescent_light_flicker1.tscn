@@ -49,7 +49,6 @@ light_energy = 0.2
 light_indirect_energy = 0.2
 light_size = 10.0
 light_specular = 0.2
-light_bake_mode = 0
 omni_range = 25.0
 script = ExtResource("2_ikmcs")
 delayBeforeFlicker = 1.2
