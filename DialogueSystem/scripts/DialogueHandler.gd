@@ -90,6 +90,15 @@ func ObtainDialogue():
 			StreamSendMessage(args);
 		if command == "ifthen":
 			StreamIfThen(args);
+		if command == "snd":
+			StreamPlaySound(args);
+
+func StreamPlaySound(args : Array[String]):
+	var soundFileName = args[0];
+	var nextNodeStr = args[1];
+	var pos = get_global_position() + Vector3(0.0, 1.0, 0.0)
+	SoundFXPlayer.PlaySound(soundFileName, get_tree(), pos, 5.0, 2.0);
+	DialogueArgsUtility.SetNextNodeFromStr(nextNodeStr);
 
 func StreamIfThen(args : Array[String]):
 	var variableName = args[0];

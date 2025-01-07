@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CreditsRoot" load_steps=17 format=3 uid="uid://c08sqlr6rc60a"]
+[gd_resource type="Resource" script_class="CreditsRoot" load_steps=19 format=3 uid="uid://c08sqlr6rc60a"]
 
 [ext_resource type="Script" path="res://Mine/Scripts/Credits/CreditsCategory.gd" id="1_3h8ov"]
 [ext_resource type="Script" path="res://Mine/Scripts/Credits/CreditsEntry.gd" id="1_7f811"]
@@ -54,10 +54,20 @@ script = ExtResource("1_7f811")
 Item = "Typewriter sound"
 Source = "yottasounds @ freesound.org"
 
+[sub_resource type="Resource" id="Resource_l5v7h"]
+script = ExtResource("1_7f811")
+Item = "Horror Sound Library"
+Source = " Little Robot Sound Factory: www.littlerobotsoundfactory.com"
+
+[sub_resource type="Resource" id="Resource_cnqpi"]
+script = ExtResource("1_7f811")
+Item = "Bang fx"
+Source = "bart @ opengameart.org"
+
 [sub_resource type="Resource" id="Resource_h1kfk"]
 script = ExtResource("1_3h8ov")
 CategoryName = "SoundFX"
-entries = Array[ExtResource("1_7f811")]([SubResource("Resource_dlcsn")])
+entries = Array[ExtResource("1_7f811")]([SubResource("Resource_dlcsn"), SubResource("Resource_l5v7h"), SubResource("Resource_cnqpi")])
 
 [sub_resource type="Resource" id="Resource_repmk"]
 script = ExtResource("1_7f811")
