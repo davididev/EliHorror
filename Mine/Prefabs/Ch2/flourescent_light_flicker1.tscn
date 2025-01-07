@@ -44,9 +44,12 @@ mesh = SubResource("ArrayMesh_dwgpc")
 skeleton = NodePath("")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Cube"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.748614, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.19471, 0)
 light_energy = 0.2
 light_indirect_energy = 0.2
-light_size = 15.0
+light_size = 10.0
 light_specular = 0.2
+light_bake_mode = 0
+omni_range = 25.0
 script = ExtResource("2_ikmcs")
+delayBeforeFlicker = 1.2

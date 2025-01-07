@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ddyo2jv7628sa" path="res://VR/Prefabs/player_boilerplate.tscn" id="2_pv6dw"]
 [ext_resource type="Script" path="res://VR/Scripts/Misc/SceneVars.gd" id="3_fpscd"]
 [ext_resource type="PackedScene" uid="uid://mociajypxykj" path="res://Mine/Prefabs/Ch2/inside_cell.tscn" id="4_q8f25"]
-[ext_resource type="Resource" path="res://DialogueSystem/output/Ch2_PaddedCell.res" id="4_tgokt"]
+[ext_resource type="Resource" uid="uid://d1had0mjediwg" path="res://DialogueSystem/output/Ch2_PaddedCell.res" id="4_tgokt"]
 [ext_resource type="LightmapGIData" uid="uid://dyu7d76d5r648" path="res://Mine/Scenes/Ch2/Scene.lmbake" id="5_eorh5"]
 [ext_resource type="MeshLibrary" uid="uid://44cl1me5n1xi" path="res://Mine/Models/Modular/Mental Hospital/MentalHospitalMeshLibrary.tres" id="6_oxs23"]
 [ext_resource type="Material" uid="uid://pklmudqonekp" path="res://Mine/Tilesets/MT_MentalHospital.tres" id="8_s8bqi"]
@@ -75,7 +75,7 @@ _surfaces = [{
 [sub_resource type="BoxShape3D" id="BoxShape3D_fgybl"]
 size = Vector3(1.9, 2.9, 1)
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_hurgu"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_m44nv"]
 resource_name = "MentalHospitalDoor_Cube"
 _blend_shape_names = PackedStringArray("Bump1", "Bump2", "Bump3")
 _surfaces = [{
@@ -161,11 +161,15 @@ shape = SubResource("BoxShape3D_fgybl")
 
 [node name="Cube" type="MeshInstance3D" parent="MentalHospitalDoor/RigidBody3D/CollisionShape3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
-mesh = SubResource("ArrayMesh_hurgu")
+cast_shadow = 0
+extra_cull_margin = 100.0
+gi_mode = 2
+mesh = SubResource("ArrayMesh_m44nv")
 skeleton = NodePath("")
 blend_shapes/Bump1 = 0.0
 blend_shapes/Bump2 = 0.0
 blend_shapes/Bump3 = 0.0
+surface_material_override/0 = ExtResource("9_8wppy")
 
 [connection signal="Open" from="MentalHospitalDoor" to="MentalHospitalDoor" method="_on_open"]
 [connection signal="body_entered" from="MentalHospitalDoor/RigidBody3D" to="MentalHospitalDoor" method="_on_rigid_body_3d_body_entered"]

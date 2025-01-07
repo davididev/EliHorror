@@ -42,5 +42,5 @@ func _on_rigid_body_3d_body_entered(body: Node) -> void:
 	if not body.is_in_group("player_body"):
 		return
 	
-	if get_node(Rigid_Path).linear_velocity.magnitude > 1.0:  #Moving fast enough to do real damage
+	if get_node(Rigid_Path).linear_velocity.length() > 1.0:  #Moving fast enough to do real damage
 		body.emit_signal("OnDamage", 70, global_position);
