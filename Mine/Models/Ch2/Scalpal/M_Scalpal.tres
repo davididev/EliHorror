@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://ddviend7efft"]
+
+[ext_resource type="Texture2D" uid="uid://cxkd63261vj2y" path="res://Mine/Models/Ch2/Scalpal/Scalp_DefaultMaterial_Base_Color.png" id="1_3fpwu"]
+[ext_resource type="Texture2D" uid="uid://bhl3clflwqey" path="res://Mine/Models/Ch2/Scalpal/Scalp_DefaultMaterial_Normal.png" id="2_q84xw"]
+
+[resource]
+albedo_texture = ExtResource("1_3fpwu")
+normal_enabled = true
+normal_texture = ExtResource("2_q84xw")

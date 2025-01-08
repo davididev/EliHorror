@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://cyk5xgkd6wx3c"]
+[gd_scene load_steps=21 format=4 uid="uid://cyk5xgkd6wx3c"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/staging/scene_base.gd" id="1_8540p"]
 [ext_resource type="PackedScene" uid="uid://ddyo2jv7628sa" path="res://VR/Prefabs/player_boilerplate.tscn" id="2_pv6dw"]
@@ -11,6 +11,9 @@
 [ext_resource type="Material" uid="uid://b45vi8fbkx0h8" path="res://Mine/Models/Ch2/Door/M_MEntalHospital.tres" id="9_8wppy"]
 [ext_resource type="Script" path="res://Mine/Scenes/Ch2/mental_hospital_door.gd" id="9_yklhq"]
 [ext_resource type="Script" path="res://DialogueSystem/scripts/NPC.gd" id="11_darqf"]
+[ext_resource type="PackedScene" uid="uid://bcclowtsgi1wc" path="res://Mine/Prefabs/Enemy/Demon2.tscn" id="12_mlg15"]
+[ext_resource type="PackedScene" uid="uid://bx81ylsj3xj4" path="res://Mine/Prefabs/Ch2/scalpel.tscn" id="13_mdpo2"]
+[ext_resource type="PackedScene" uid="uid://d2wy8v0skx7ko" path="res://Mine/Prefabs/Enemy/Demon3.tscn" id="14_sl5gi"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_lwptp"]
 lightmap_size_hint = Vector2i(358, 358)
@@ -170,6 +173,15 @@ blend_shapes/Bump1 = 0.0
 blend_shapes/Bump2 = 0.0
 blend_shapes/Bump3 = 0.0
 surface_material_override/0 = ExtResource("9_8wppy")
+
+[node name="Demon2" parent="." instance=ExtResource("12_mlg15")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.3783, -0.208175, 0.0230156)
+
+[node name="Scalpel" parent="." instance=ExtResource("13_mdpo2")]
+transform = Transform3D(0.241465, -0.97041, 0, 0.97041, 0.241465, 0, 0, 0, 1, -4.09056, -0.125672, -0.0286498)
+
+[node name="Demon3" parent="." instance=ExtResource("14_sl5gi")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.95716, 0.154447, 9.84509)
 
 [connection signal="Open" from="MentalHospitalDoor" to="MentalHospitalDoor" method="_on_open"]
 [connection signal="body_entered" from="MentalHospitalDoor/RigidBody3D" to="MentalHospitalDoor" method="_on_rigid_body_3d_body_entered"]

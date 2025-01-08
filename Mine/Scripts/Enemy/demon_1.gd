@@ -59,7 +59,10 @@ func _process(delta: float) -> void:
 	if dist < 1.5:
 		run_attack_step(delta);
 	else:
-		run_towards_player(delta, targetPos);
+		if dist > 12.0:
+			be_idle(delta);
+		else:
+			run_towards_player(delta, targetPos);
 	if Health > 0:
 		dieTimer = 500.0;
 	else:
@@ -71,7 +74,12 @@ func _process(delta: float) -> void:
 			get_tree().root.add_child(inst);
 			queue_free();
 	move_and_slide();
-	
+
+func be_idle(delta : float):
+	move_to_state("Idle");
+	runSpeed = 0.0;
+	velocity = Vector3(0.0, -1.0, 0.0);
+
 func run_towards_player(delta : float, targetPos : Vector3):
 	if Health <= 0:
 		velocity = Vector3.ZERO;

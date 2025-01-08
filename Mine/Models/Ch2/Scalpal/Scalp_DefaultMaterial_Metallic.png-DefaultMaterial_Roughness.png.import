@@ -1,0 +1,39 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bd3pt1qmlctkf"
+path.s3tc="res://.godot/imported/Scalp_DefaultMaterial_Metallic.png-DefaultMaterial_Roughness.png-247f59ebba0b9d7c09a7ea1c45fa26c4.s3tc.ctex"
+path.etc2="res://.godot/imported/Scalp_DefaultMaterial_Metallic.png-DefaultMaterial_Roughness.png-247f59ebba0b9d7c09a7ea1c45fa26c4.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "6365891aff650252a0f765f229314277"
+}
+
+[deps]
+
+source_file="res://Mine/Models/Ch2/Scalpal/Scalp_DefaultMaterial_Metallic.png-DefaultMaterial_Roughness.png"
+dest_files=["res://.godot/imported/Scalp_DefaultMaterial_Metallic.png-DefaultMaterial_Roughness.png-247f59ebba0b9d7c09a7ea1c45fa26c4.s3tc.ctex", "res://.godot/imported/Scalp_DefaultMaterial_Metallic.png-DefaultMaterial_Roughness.png-247f59ebba0b9d7c09a7ea1c45fa26c4.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

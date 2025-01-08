@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bx81ylsj3xj4"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_bk4hv"]
+[ext_resource type="Script" path="res://Mine/Scripts/Ch1/knife_pickup.gd" id="1_quchp"]
+[ext_resource type="PackedScene" uid="uid://oqx05u2xu33q" path="res://Mine/Models/Ch2/Scalpal/Scalp.glb" id="2_8jn3p"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="3_mwewg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y4b0t"]
+size = Vector3(0.1, 0.5, 0.1)
+
+[node name="Scalpel" type="Node3D"]
+script = ExtResource("1_quchp")
+TouchDamage = 6
+
+[node name="PickableObject" parent="." instance=ExtResource("1_bk4hv")]
+freeze = true
+contact_monitor = true
+max_contacts_reported = 4
+release_mode = 0
+
+[node name="CollisionShape3D" parent="PickableObject" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.215974, 0)
+shape = SubResource("BoxShape3D_y4b0t")
+
+[node name="Scalp" parent="PickableObject" instance=ExtResource("2_8jn3p")]
+
+[node name="GrabPointHandLeft" parent="PickableObject" instance=ExtResource("3_mwewg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.162189, 0)
+
+[node name="GrabPointHandLeft2" parent="PickableObject" instance=ExtResource("3_mwewg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.162189, 0)
+hand = 1
+
+[connection signal="body_entered" from="PickableObject" to="." method="_on_pickable_object_body_entered"]
+
+[editable path="PickableObject"]
