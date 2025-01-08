@@ -1,11 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://bx81ylsj3xj4"]
+[gd_scene load_steps=8 format=3 uid="uid://bx81ylsj3xj4"]
 
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_bk4hv"]
 [ext_resource type="Script" path="res://Mine/Scripts/Ch1/knife_pickup.gd" id="1_quchp"]
 [ext_resource type="PackedScene" uid="uid://oqx05u2xu33q" path="res://Mine/Models/Ch2/Scalpal/Scalp.glb" id="2_8jn3p"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="3_mwewg"]
+[ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="5_oy4qw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y4b0t"]
+size = Vector3(0.1, 0.5, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3unao"]
 size = Vector3(0.1, 0.5, 0.1)
 
 [node name="Scalpel" type="Node3D"]
@@ -14,7 +18,6 @@ TouchDamage = 6
 
 [node name="PickableObject" parent="." instance=ExtResource("1_bk4hv")]
 freeze = true
-contact_monitor = true
 max_contacts_reported = 4
 release_mode = 0
 
@@ -22,7 +25,11 @@ release_mode = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.215974, 0)
 shape = SubResource("BoxShape3D_y4b0t")
 
-[node name="Scalp" parent="PickableObject" instance=ExtResource("2_8jn3p")]
+[node name="Scalp" parent="PickableObject/CollisionShape3D" index="0" instance=ExtResource("2_8jn3p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.215974, 0)
+
+[node name="HighlightRing" parent="PickableObject" instance=ExtResource("5_oy4qw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.163233, 0)
 
 [node name="GrabPointHandLeft" parent="PickableObject" instance=ExtResource("3_mwewg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.162189, 0)
@@ -31,6 +38,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.162189, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.162189, 0)
 hand = 1
 
-[connection signal="body_entered" from="PickableObject" to="." method="_on_pickable_object_body_entered"]
+[node name="BladePoint" type="Node3D" parent="PickableObject"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.398329, 0)
+
+[node name="Area3D" type="Area3D" parent="PickableObject/BladePoint"]
+collision_layer = 2
+collision_mask = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickableObject/BladePoint/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.143735, 0)
+shape = SubResource("BoxShape3D_3unao")
+
+[connection signal="body_entered" from="PickableObject/BladePoint/Area3D" to="." method="_on_pickable_object_body_entered"]
 
 [editable path="PickableObject"]

@@ -29,7 +29,7 @@ func SetActive(act : bool):
 	set_physics_process(act);
 	set_process(act);
 
-func _init() -> void:
+func _enter_tree() -> void:
 	lastState = "";
 	attackTimer = -1.0;
 	attackStep = -1;

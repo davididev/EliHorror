@@ -5,12 +5,12 @@ var blood_explosion_prefab : PackedScene = preload("res://Mine/Prefabs/Enemy/blo
 @export var tree : NodePath;
 
 signal OnDamage(amt : int, hitPos : Vector3);
-var damage_timer = 5.0;
+var damage_timer = 1.0;
 
 var lastState = "";
 
 func _ready() -> void:
-	damage_timer = 5.0;
+	damage_timer = 1.0;
 	move_to_state("Stagger_Idle");
 
 func move_to_state(state):
