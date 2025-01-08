@@ -245,6 +245,7 @@ layers = 2
 
 [node name="OmniLight3D" parent="CollisionShape3D/DemonMain/godot_rig/Skeleton3D/BoneAttachment3D/FireballPunch/CollisionShape3D" index="1"]
 transform = Transform3D(1, -2.74364e-08, -1.19825e-08, 4.6721e-16, 1, -1.86263e-09, 0, 0, 1, 0, 0.345798, -6.70552e-08)
+light_bake_mode = 0
 
 [node name="AnimationTree" type="AnimationTree" parent="CollisionShape3D/DemonMain"]
 tree_root = ExtResource("3_kek88")
