@@ -6,6 +6,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w28ht"]
 transparency = 1
 cull_mode = 2
+depth_draw_mode = 1
 no_depth_test = true
 shading_mode = 0
 
