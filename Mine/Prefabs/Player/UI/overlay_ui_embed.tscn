@@ -4,11 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://cfsv6f3mas4le" path="res://Mine/Prefabs/Player/UI/overlay_ui_content.tscn" id="2_uqq63"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w28ht"]
+render_priority = 2
 transparency = 1
 cull_mode = 2
-depth_draw_mode = 1
 no_depth_test = true
 shading_mode = 0
+specular_mode = 2
 
 [node name="OverlayUIEmbed" type="Node3D"]
 
@@ -19,5 +20,4 @@ enabled = false
 scene = ExtResource("2_uqq63")
 viewport_size = Vector2(400, 400)
 material = SubResource("StandardMaterial3D_w28ht")
-transparent = 2
 scene_properties_keys = PackedStringArray("overlay_ui_content.gd")

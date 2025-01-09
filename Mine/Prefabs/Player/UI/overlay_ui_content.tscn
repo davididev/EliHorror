@@ -8,21 +8,32 @@
 [ext_resource type="Texture2D" uid="uid://bygo21jxojbsu" path="res://Mine/UI/HealthBarFG.png" id="6_6hl47"]
 
 [node name="VBoxContainer" type="Control"]
+visibility_layer = 2
 z_index = 5
 layout_mode = 3
-anchors_preset = 0
-offset_right = 400.0
-offset_bottom = 400.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_7uv15")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
+visibility_layer = 2
 layout_mode = 2
 offset_right = 400.0
 offset_bottom = 400.0
 color = Color(0, 0, 0, 1)
 
 [node name="Time Label" type="Label" parent="."]
+visibility_layer = 2
 layout_mode = 2
 offset_left = 143.0
 offset_top = -10.0
@@ -35,6 +46,7 @@ text = "0:00 PM"
 horizontal_alignment = 2
 
 [node name="Subtitle" type="RichTextLabel" parent="."]
+visibility_layer = 2
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -47,6 +59,7 @@ theme = ExtResource("2_ex1gl")
 bbcode_enabled = true
 
 [node name="Chapter Header" type="Label" parent="."]
+visibility_layer = 2
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -57,6 +70,7 @@ theme = ExtResource("3_46c41")
 horizontal_alignment = 1
 
 [node name="Health Label" type="Label" parent="."]
+visibility_layer = 2
 layout_mode = 0
 offset_left = 3.0
 offset_top = 89.0
@@ -66,6 +80,7 @@ theme = ExtResource("4_chg74")
 text = "Health:"
 
 [node name="HealthBar" type="TextureProgressBar" parent="."]
+visibility_layer = 2
 layout_mode = 0
 offset_left = 136.0
 offset_top = 81.0
