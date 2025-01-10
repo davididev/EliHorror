@@ -54,3 +54,5 @@ light_specular = 0.2
 light_bake_mode = 0
 omni_range = 40.0
 script = ExtResource("2_jib81")
+flickerCount = 9
+delayBeforeFlicker = 2.75
