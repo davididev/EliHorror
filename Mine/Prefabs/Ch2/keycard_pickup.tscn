@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://cm4xq7gsc8dh1"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_d4h2v"]
+[ext_resource type="Script" path="res://Mine/Scripts/Ch2/keycard_pickup.gd" id="1_t1h5s"]
+[ext_resource type="PackedScene" uid="uid://bq5f506hyrgkw" path="res://Mine/Models/Ch2/Keycard/keycard.glb" id="2_0n6wi"]
+[ext_resource type="Resource" path="res://DialogueSystem/output/gotkey.res" id="2_7egpm"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="3_2djnv"]
+[ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="4_g6ryr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k1vcs"]
+size = Vector3(0.1, 0.4, 0.35)
+
+[node name="Keycard pickup" type="Node3D"]
+script = ExtResource("1_t1h5s")
+dialogue = ExtResource("2_7egpm")
+
+[node name="PickableObject" parent="." instance=ExtResource("1_d4h2v")]
+second_hand_grab = 1
+
+[node name="CollisionShape3D" parent="PickableObject" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.243568, -0.0568202)
+shape = SubResource("BoxShape3D_k1vcs")
+
+[node name="keycard" parent="PickableObject" instance=ExtResource("2_0n6wi")]
+
+[node name="GrabPointHandLeft" parent="PickableObject" instance=ExtResource("3_2djnv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.216976, -0.0386034)
+
+[node name="GrabPointHandLeft2" parent="PickableObject" instance=ExtResource("3_2djnv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.216976, -0.0386034)
+hand = 1
+
+[node name="HighlightRing" parent="PickableObject" instance=ExtResource("4_g6ryr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.219694, -0.0488051)
+
+[connection signal="grabbed" from="PickableObject" to="." method="_on_pickable_object_grabbed"]
+
+[editable path="PickableObject"]

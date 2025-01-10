@@ -14,7 +14,7 @@ size = Vector3(0.1, 0.5, 0.1)
 
 [node name="Scalpel" type="Node3D"]
 script = ExtResource("1_quchp")
-TouchDamage = 6
+TouchDamage = 3
 
 [node name="PickableObject" parent="." instance=ExtResource("1_bk4hv")]
 freeze = true
