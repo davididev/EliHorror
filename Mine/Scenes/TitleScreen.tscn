@@ -91,6 +91,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.781, 0, 0.61)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.781, 0, -1.39)
 ChapterID = 2
 
+[node name="TitlePortal3" parent="." instance=ExtResource("5_o8oy5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.781, 0, 1.61)
+ChapterID = 3
+
 [node name="Viewport2Din3D" parent="." instance=ExtResource("6_6otpb")]
 transform = Transform3D(-2.62268e-08, -0.424264, 0.424264, 0, 0.424264, 0.424264, -0.6, 1.85452e-08, -1.85452e-08, -7.97828, 0.844012, -0.0332847)
 screen_size = Vector2(1, 1)
