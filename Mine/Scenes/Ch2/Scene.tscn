@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://cyk5xgkd6wx3c"]
+[gd_scene load_steps=28 format=4 uid="uid://cyk5xgkd6wx3c"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/staging/scene_base.gd" id="1_8540p"]
 [ext_resource type="PackedScene" uid="uid://ddyo2jv7628sa" path="res://VR/Prefabs/player_boilerplate.tscn" id="2_pv6dw"]
@@ -21,6 +21,7 @@
 [ext_resource type="Material" uid="uid://djse7ur78mlf6" path="res://Mine/Tilesets/MT_BuildingInner.tres" id="20_s0pe4"]
 [ext_resource type="PackedScene" uid="uid://36k0divhiouu" path="res://Mine/Prefabs/Ch2/flourescent_light_normal.tscn" id="20_uedje"]
 [ext_resource type="PackedScene" uid="uid://cm4xq7gsc8dh1" path="res://Mine/Prefabs/Ch2/keycard_pickup.tscn" id="21_cshao"]
+[ext_resource type="PackedScene" uid="uid://bw68lsw2ipov6" path="res://Mine/Prefabs/Ch2/exit_decal.tscn" id="22_84odr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fgybl"]
 size = Vector3(1.9, 2.9, 1)
@@ -324,57 +325,47 @@ top_level = true
 script = ExtResource("14_te07a")
 MyList = Array[ExtResource("15_717mp")]([ExtResource("16_cou3o")])
 
-[node name="Child1" type="Node3D" parent="DecorationPlacer" instance=ExtResource("16_dhm5e")]
+[node name="Child1" parent="DecorationPlacer" instance=ExtResource("16_dhm5e")]
 transform = Transform3D(1.297, 1.13387e-07, 0, -1.13387e-07, 1.297, 0, 0, 0, -1.297, -31.8164, -1, 25.605)
-top_level = true
 
-[node name="Child2" type="Node3D" parent="DecorationPlacer" instance=ExtResource("16_dhm5e")]
+[node name="Child2" parent="DecorationPlacer" instance=ExtResource("16_dhm5e")]
 transform = Transform3D(1.40365, 1.22711e-07, 0, -1.22711e-07, 1.40365, 0, 0, 0, -1.40365, -33.2251, -1, 22.5797)
-top_level = true
 
-[node name="Child3" type="Node3D" parent="DecorationPlacer" instance=ExtResource("16_dhm5e")]
+[node name="Child3" parent="DecorationPlacer" instance=ExtResource("16_dhm5e")]
 transform = Transform3D(0.764974, 6.68761e-08, 0, -6.68761e-08, 0.764974, 0, 0, 0, -0.764974, -28.4232, -1, 20.7374)
-top_level = true
 
-[node name="Child4" type="Node3D" parent="DecorationPlacer" instance=ExtResource("16_dhm5e")]
+[node name="Child4" parent="DecorationPlacer" instance=ExtResource("16_dhm5e")]
 transform = Transform3D(0.984012, 8.60251e-08, 0, -8.60251e-08, 0.984012, 0, 0, 0, -0.984012, -23.0988, -1, 20.6915)
-top_level = true
 
-[node name="Child5" type="Node3D" parent="DecorationPlacer" instance=ExtResource("16_dhm5e")]
+[node name="Child5" parent="DecorationPlacer" instance=ExtResource("16_dhm5e")]
 transform = Transform3D(1.00595, 8.79433e-08, 0, -8.79433e-08, 1.00595, 0, 0, 0, -1.00595, -15.7965, -1, 21.2415)
-top_level = true
 
-[node name="Child6" type="Node3D" parent="DecorationPlacer" instance=ExtResource("16_dhm5e")]
+[node name="Child6" parent="DecorationPlacer" instance=ExtResource("16_dhm5e")]
 transform = Transform3D(1.17645, 1.02849e-07, 0, -1.02849e-07, 1.17645, 0, 0, 0, -1.17645, -11.9546, -1.0071, 20.5946)
-top_level = true
 
-[node name="Child7" type="Node3D" parent="DecorationPlacer" instance=ExtResource("16_dhm5e")]
+[node name="Child7" parent="DecorationPlacer" instance=ExtResource("16_dhm5e")]
 transform = Transform3D(1.96419, 1.71715e-07, 0, -1.71715e-07, 1.96419, 0, 0, 0, -1.96419, -10.1178, -1, 24.0686)
-top_level = true
 
-[node name="Child8" type="Node3D" parent="DecorationPlacer" instance=ExtResource("16_dhm5e")]
+[node name="Child8" parent="DecorationPlacer" instance=ExtResource("16_dhm5e")]
 transform = Transform3D(0.928475, 8.11699e-08, 0, -8.11699e-08, 0.928475, 0, 0, 0, -0.928475, -11.5406, -1, 25.3327)
-top_level = true
 
-[node name="Child9" type="Node3D" parent="DecorationPlacer" instance=ExtResource("16_dhm5e")]
+[node name="Child9" parent="DecorationPlacer" instance=ExtResource("16_dhm5e")]
 transform = Transform3D(1.52274, 1.33122e-07, 0, -1.33122e-07, 1.52274, 0, 0, 0, -1.52274, -14.1556, -1, 26.8348)
-top_level = true
 
-[node name="Child10" type="Node3D" parent="DecorationPlacer" instance=ExtResource("16_dhm5e")]
+[node name="Child10" parent="DecorationPlacer" instance=ExtResource("16_dhm5e")]
 transform = Transform3D(0.797307, 6.97028e-08, 0, -6.97028e-08, 0.797307, 0, 0, 0, -0.797307, -9.38561, -1, 26.7333)
-top_level = true
 
-[node name="Child11" type="Node3D" parent="DecorationPlacer" instance=ExtResource("16_dhm5e")]
+[node name="Child11" parent="DecorationPlacer" instance=ExtResource("16_dhm5e")]
 transform = Transform3D(1.91531, 0, 0, 0, 0.0157586, 1.91525, 0, -1.91525, 0.0157586, -10.1688, 0.922453, 27.9607)
-top_level = true
 
-[node name="Child12" type="Node3D" parent="DecorationPlacer" instance=ExtResource("16_dhm5e")]
+[node name="Child12" parent="DecorationPlacer" instance=ExtResource("16_dhm5e")]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, -7.05556, 0.636382, 24.868)
-top_level = true
 
-[node name="Child13" type="Node3D" parent="DecorationPlacer" instance=ExtResource("16_dhm5e")]
+[node name="Child13" parent="DecorationPlacer" instance=ExtResource("16_dhm5e")]
 transform = Transform3D(-6.34947e-08, -1.45259, -6.34947e-08, 0, -6.34947e-08, 1.45259, -1.45259, 6.34947e-08, 2.77544e-15, -5.04641, 0.413218, 21.3899)
-top_level = true
+
+[node name="ExitDecal" parent="." instance=ExtResource("22_84odr")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -33.016, -1.13182, 27.4465)
 
 [connection signal="Open" from="MentalHospitalDoor" to="MentalHospitalDoor" method="_on_open"]
 [connection signal="body_entered" from="MentalHospitalDoor/RigidBody3D" to="MentalHospitalDoor" method="_on_rigid_body_3d_body_entered"]

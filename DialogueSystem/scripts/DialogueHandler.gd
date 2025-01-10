@@ -15,6 +15,7 @@ static var Selected_Choice = -1;
 var _scene_base : XRToolsSceneBase
 var lastFadeColor : Color;
 static var FadeColor : Color;
+static var LastScene = "";
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -153,6 +154,7 @@ func SteamTeleport(args : Array[String], isExternal = false):
 		return
 
 	var scene = args[0];
+	LastScene = scene;
 	var spawn_point_position : Vector3 = DialogueArgsUtility.ConvertStringToVector3(args[1]);
 	# Teleport
 	_scene_base.load_scene(scene, spawn_point_position)
