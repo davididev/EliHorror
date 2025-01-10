@@ -94,7 +94,7 @@ func run_towards_player(delta : float, targetPos : Vector3):
 	var current_angle = col.rotation_degrees;
 	current_angle.y = look_at_node.rotation_degrees.y;
 	col.rotation_degrees = current_angle;
-	velocity = -col.basis.z * runSpeed;
+	velocity = col.global_basis.z * runSpeed;
 	velocity.y = -1.0;
 	
 	
