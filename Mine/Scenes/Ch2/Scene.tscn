@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://cyk5xgkd6wx3c"]
+[gd_scene load_steps=20 format=4 uid="uid://cyk5xgkd6wx3c"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/staging/scene_base.gd" id="1_8540p"]
 [ext_resource type="PackedScene" uid="uid://ddyo2jv7628sa" path="res://VR/Prefabs/player_boilerplate.tscn" id="2_pv6dw"]
@@ -13,6 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://bcclowtsgi1wc" path="res://Mine/Prefabs/Enemy/Demon2.tscn" id="12_mlg15"]
 [ext_resource type="PackedScene" uid="uid://bx81ylsj3xj4" path="res://Mine/Prefabs/Ch2/scalpel.tscn" id="13_mdpo2"]
 [ext_resource type="PackedScene" uid="uid://d2wy8v0skx7ko" path="res://Mine/Prefabs/Enemy/Demon3.tscn" id="14_sl5gi"]
+[ext_resource type="Script" path="res://VR/Scripts/Misc/DecorationPlacer.gd" id="14_te07a"]
+[ext_resource type="Script" path="res://VR/Scripts/Misc/DecorationResource.gd" id="15_717mp"]
+[ext_resource type="Resource" uid="uid://54acqscs4c68" path="res://Mine/Prefabs/Decorations/Blood_DecorationEntry.tres" id="16_cou3o"]
+[ext_resource type="PackedScene" uid="uid://beg305se1useb" path="res://Mine/Prefabs/Decorations/blood_decal.tscn" id="16_dhm5e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fgybl"]
 size = Vector3(1.9, 2.9, 1)
@@ -95,6 +99,7 @@ send_message_path = NodePath("..")
 usesCC = false
 
 [node name="RigidBody3D" type="RigidBody3D" parent="MentalHospitalDoor"]
+visible = false
 freeze = true
 contact_monitor = true
 max_contacts_reported = 4
@@ -123,6 +128,137 @@ transform = Transform3D(0.241465, -0.97041, 0, 0.97041, 0.241465, 0, 0, 0, 1, -4
 
 [node name="Demon3" parent="." instance=ExtResource("14_sl5gi")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.95716, 0.535723, 15.0003)
+
+[node name="Demon4" parent="." instance=ExtResource("14_sl5gi")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.3114, 0.535723, 15.0003)
+
+[node name="Demon5" parent="." instance=ExtResource("14_sl5gi")]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -23.3114, 0.535723, 9.0003)
+
+[node name="Blood1" type="Node3D" parent="."]
+top_level = true
+script = ExtResource("14_te07a")
+MyList = Array[ExtResource("15_717mp")]([ExtResource("16_cou3o")])
+
+[node name="Child1" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(0.76237, 6.66485e-08, 0, -6.66485e-08, 0.76237, 0, 0, 0, -0.76237, -7.18931, -1, 7.06221)
+top_level = true
+
+[node name="Child2" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(0.924039, 8.07821e-08, 0, -8.07821e-08, 0.924039, 0, 0, 0, -0.924039, -8.75545, -1, 4.67151)
+top_level = true
+
+[node name="Child3" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(1.35913, 1.18819e-07, 0, -1.18819e-07, 1.35913, 0, 0, 0, -1.35913, -7.43837, -1, 2.36312)
+top_level = true
+
+[node name="Child4" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(0.738034, 6.4521e-08, 0, -6.4521e-08, 0.738034, 0, 0, 0, -0.738034, -7.58513, -1, 12.5482)
+top_level = true
+
+[node name="Child5" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(0.799102, 6.98597e-08, 0, -6.98597e-08, 0.799102, 0, 0, 0, -0.799102, -10.581, -1, 14.5668)
+top_level = true
+
+[node name="Child6" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(1.44559, 1.26378e-07, 0, -1.26378e-07, 1.44559, 0, 0, 0, -1.44559, -12.4263, -1, 14.7066)
+top_level = true
+
+[node name="Child7" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(1.00423, 8.77925e-08, 0, -8.77925e-08, 1.00423, 0, 0, 0, -1.00423, -10.9883, -1, 12.762)
+top_level = true
+
+[node name="Child8" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(1.23874, 1.08294e-07, 0, -1.08294e-07, 1.23874, 0, 0, 0, -1.23874, -9.08526, -1, 11.867)
+top_level = true
+
+[node name="Child9" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(0.955008, 8.34895e-08, 0, -8.34895e-08, 0.955008, 0, 0, 0, -0.955008, -9.64486, -1, 3.22334)
+top_level = true
+
+[node name="Child10" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(1.35501, 1.18459e-07, 0, -1.18459e-07, 1.35501, 0, 0, 0, -1.35501, -9.13637, -1, 1.07289)
+top_level = true
+
+[node name="Child11" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(1.44756, 1.2655e-07, 0, -1.2655e-07, 1.44756, 0, 0, 0, -1.44756, -7.10504, -1, -1.76334)
+top_level = true
+
+[node name="Child12" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(1.37891, 1.20548e-07, 0, -1.20548e-07, 1.37891, 0, 0, 0, -1.37891, -13.06, -1, 7.77914)
+top_level = true
+
+[node name="Child13" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(0.630205, 5.50943e-08, 0, -5.50943e-08, 0.630205, 0, 0, 0, -0.630205, -14.0453, -1.00813, 10.1428)
+top_level = true
+
+[node name="Child14" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(0.878982, 7.6843e-08, 0, -7.6843e-08, 0.878982, 0, 0, 0, -0.878982, -18.5834, -1, 11.9997)
+top_level = true
+
+[node name="Child15" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(0.594125, 5.19401e-08, 0, -5.19401e-08, 0.594125, 0, 0, 0, -0.594125, -13.8218, -1, 12.3352)
+top_level = true
+
+[node name="Child16" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(1.34707, 1.17765e-07, 0, -1.17765e-07, 1.34707, 0, 0, 0, -1.34707, -16.4168, -1, 14.07)
+top_level = true
+
+[node name="Child17" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(1.11815, 9.77517e-08, 0, -9.77517e-08, 1.11815, 0, 0, 0, -1.11815, -23.7094, -1, 11.6764)
+top_level = true
+
+[node name="Child18" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(0.941274, 8.22888e-08, 0, -8.22888e-08, 0.941274, 0, 0, 0, -0.941274, -17.1868, -1, 8.12786)
+top_level = true
+
+[node name="Child19" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(1.25396, 1.09624e-07, 0, -1.09624e-07, 1.25396, 0, 0, 0, -1.25396, -12.8198, -1, 8.03367)
+top_level = true
+
+[node name="Child20" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(0.590362, 5.16111e-08, 0, -5.16111e-08, 0.590362, 0, 0, 0, -0.590362, -9.91442, -1, 9.57443)
+top_level = true
+
+[node name="Child21" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(1.42072, 1.24203e-07, 0, -1.24203e-07, 1.42072, 0, 0, 0, -1.42072, -10.9344, -1, 10.8179)
+top_level = true
+
+[node name="Child22" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(1.23888, 1.08307e-07, 0, -1.08307e-07, 1.23888, 0, 0, 0, -1.23888, -1.06181, -1, 12.7735)
+top_level = true
+
+[node name="Child23" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(1.45171, 1.26913e-07, 0, -1.26913e-07, 1.45171, 0, 0, 0, -1.45171, 0.264956, -1, 14.0957)
+top_level = true
+
+[node name="Child24" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(1.30469, 1.14059e-07, 0, -1.14059e-07, 1.30469, 0, 0, 0, -1.30469, 3.1078, -1, 16.4794)
+top_level = true
+
+[node name="Child25" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(1.28394, 1.12245e-07, 0, -1.12245e-07, 1.28394, 0, 0, 0, -1.28394, -1.67248, -1, 16.0808)
+top_level = true
+
+[node name="Child26" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(1.28428, 0, 0, 0, -5.61377e-08, 1.28428, 0, -1.28428, -5.61377e-08, -10.1599, 1.88879, 17.9987)
+top_level = true
+
+[node name="Child27" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(1.14867, 0, 0, 0, -5.02101e-08, 1.14867, 0, -1.14867, -5.02101e-08, -10.2361, 2.02489, 17.9444)
+top_level = true
+
+[node name="Child28" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(0.732114, 6.40035e-08, 0, -6.40035e-08, 0.732114, 0, 0, 0, -0.732114, -10.9615, 1.01456, 0.58327)
+top_level = true
+
+[node name="Child29" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(-1.47513e-07, 1.1249, 0, -1.1249, -1.47513e-07, 0, 0, 0, -1.1249, -10.964, 1.32113, 2.6413)
+top_level = true
+
+[node name="Child30" type="Node3D" parent="Blood1" instance=ExtResource("16_dhm5e")]
+transform = Transform3D(-1.22457e-07, 0.933833, 0, -0.933833, -1.22457e-07, 0, 0, 0, -0.933833, -11.0343, 0.782211, 0.454541)
+top_level = true
 
 [connection signal="Open" from="MentalHospitalDoor" to="MentalHospitalDoor" method="_on_open"]
 [connection signal="body_entered" from="MentalHospitalDoor/RigidBody3D" to="MentalHospitalDoor" method="_on_rigid_body_3d_body_entered"]

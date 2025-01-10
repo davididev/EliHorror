@@ -1,6 +1,5 @@
 @tool
-class_name DecorationPlacer
-extends Node3D
+class_name DecorationPlacer extends Node3D
 
 @export var MyList : Array[DecorationResource]
 @export var selected : bool = false;
@@ -47,8 +46,8 @@ func _on_click():
 	print("Click detected")
 	var from = camera_3d.project_ray_origin(mousePos)
 	var to = from + (camera_3d.project_ray_normal(mousePos) * 500.0)
-	#var space = camera_3d.get_world_3d().direct_space_state
-	var space = EditorInterface.get_editor_viewport_3d().find_world_3d().direct_space_state;
+	var space = camera_3d.get_world_3d().direct_space_state
+	#var space = EditorInterface.get_editor_viewport_3d(0).find_world_3d().direct_space_state;
 	var rayQuery = PhysicsRayQueryParameters3D.new()
 	rayQuery.from = from
 	rayQuery.to = to
@@ -76,7 +75,7 @@ func _on_click():
 	#end reddit line
 	var r = RandomNumberGenerator.new()
 	
-	instance.rotate_y(deg_to_rad(r.randf_range(MyList[id].MinRotate, MyList[id].MaxRotate)))
+	#instance.rotate_object_local(Vector3(0.0, deg_to_rad(r.randf_range(MyList[id].MinRotate, MyList[id].MaxRotate)), 0.0));
 	
 	var r2 = RandomNumberGenerator.new()
 	var s : float = r2.randf_range(MyList[id].MinScale, MyList[id].MaxScale)

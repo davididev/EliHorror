@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DecorationResource" load_steps=3 format=3 uid="uid://54acqscs4c68"]
+
+[ext_resource type="PackedScene" uid="uid://beg305se1useb" path="res://Mine/Prefabs/Decorations/blood_decal.tscn" id="1_0luhj"]
+[ext_resource type="Script" path="res://VR/Scripts/Misc/DecorationResource.gd" id="2_rmaaf"]
+
+[resource]
+script = ExtResource("2_rmaaf")
+Prefab = ExtResource("1_0luhj")
+Weight = 2
+MinRotate = 0.0
+MaxRotate = 0.0
+MinScale = 0.5
+MaxScale = 1.5
