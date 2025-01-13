@@ -1,6 +1,6 @@
 class_name SceneVars extends Node3D
 
-@export var MusicPath : String = "";
+@export var MusicPath : String = "Lab.mp3";
 @export var DialogueOnStart : DialogueGrid;
 @export var ResetHealth = true;
 @export var ChapterHeader = "";
