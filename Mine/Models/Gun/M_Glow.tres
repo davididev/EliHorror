@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://ce1x726kajema"]
+
+[ext_resource type="Shader" uid="uid://dxl7ev7bxowou" path="res://Mine/Models/Gun/S_GunGlow.tres" id="1_1i5lg"]
+
+[resource]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_1i5lg")
+shader_parameter/PowerValue = 10.0

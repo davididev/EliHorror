@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dgkg6pig2kvna"]
+[gd_scene load_steps=14 format=4 uid="uid://dgkg6pig2kvna"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/staging/scene_base.gd" id="1_yaylo"]
 [ext_resource type="PackedScene" uid="uid://ddyo2jv7628sa" path="res://VR/Prefabs/player_boilerplate.tscn" id="2_1p7ny"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cm4xq7gsc8dh1" path="res://Mine/Prefabs/Ch2/keycard_pickup.tscn" id="5_wkaa2"]
 [ext_resource type="PackedScene" uid="uid://bw68lsw2ipov6" path="res://Mine/Prefabs/Ch2/exit_decal.tscn" id="6_f1we1"]
 [ext_resource type="Material" uid="uid://djse7ur78mlf6" path="res://Mine/Tilesets/MT_BuildingInner.tres" id="7_q7fq6"]
+[ext_resource type="PackedScene" uid="uid://db37vgi6xr3kd" path="res://Mine/Prefabs/Ch3/DemonSlayerGun.tscn" id="8_jruwa"]
+[ext_resource type="PackedScene" uid="uid://d2wy8v0skx7ko" path="res://Mine/Prefabs/Enemy/Demon3.tscn" id="9_05h70"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oo5if"]
 size = Vector3(2, 4, 4)
@@ -116,5 +118,44 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cupboard1/temp/CUBE1/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_0kp7j")
+
+[node name="DemonSlayerGun" parent="." instance=ExtResource("8_jruwa")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.990566, 0.0181178, 3.33473)
+
+[node name="Demon3" parent="." instance=ExtResource("9_05h70")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 10.8201, 0.420723, 24.2629)
+
+[node name="Demon9" parent="." instance=ExtResource("9_05h70")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 10.8201, 0.420723, 35.1864)
+
+[node name="Demon10" parent="." instance=ExtResource("9_05h70")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.50597, 0.420723, 26.5944)
+
+[node name="Demon11" parent="." instance=ExtResource("9_05h70")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 16.8236, 0.420723, 26.5944)
+
+[node name="Demon12" parent="." instance=ExtResource("9_05h70")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 19.9562, 0.420723, 26.5944)
+
+[node name="Demon13" parent="." instance=ExtResource("9_05h70")]
+transform = Transform3D(1, 0, 5.56363e-08, 0, 1, 0, -5.56363e-08, 0, 1, 23.0097, 0.420723, 25.1189)
+
+[node name="Demon14" parent="." instance=ExtResource("9_05h70")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 23.0097, 0.420723, 28.9627)
+
+[node name="Demon4" parent="." instance=ExtResource("9_05h70")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.93131, 0.88246, 26.251)
+
+[node name="Demon8" parent="." instance=ExtResource("9_05h70")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.335742, 0.88246, 27.5617)
+
+[node name="Demon5" parent="." instance=ExtResource("9_05h70")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8688, 0.807596, 17.2809)
+
+[node name="Demon6" parent="." instance=ExtResource("9_05h70")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9369, 0.349922, 31.7101)
+
+[node name="Demon7" parent="." instance=ExtResource("9_05h70")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9369, 0.349922, 36.3913)
 
 [editable path="ExitDecal"]
