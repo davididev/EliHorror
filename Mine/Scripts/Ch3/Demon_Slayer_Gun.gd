@@ -41,8 +41,10 @@ func _on_pickable_object_action_pressed(pickable: Variant) -> void:
 		
 		var origin = get_node(path_of_gun_fire).global_position;
 		var end = origin + (get_node(path_of_gun_fire).global_basis.z * -100.0)
-		var query = PhysicsRayQueryParameters3D.create(origin, end)
-		query.collision_mask = pow(2, 1-1) + pow(2, 6-1); #Static and enemy layer
+		var lm = pow(2, 1-1) + pow(2, 6-1); #Static and enemy layer
+		var query = PhysicsRayQueryParameters3D.create(origin, end, lm)
+		query.collide_with_bodies = true;
+		
 		var result = space_state.intersect_ray(query)
 		if result.is_empty() == false:
 			#end = result.position;
