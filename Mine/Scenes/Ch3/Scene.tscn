@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://dgkg6pig2kvna"]
+[gd_scene load_steps=45 format=4 uid="uid://dgkg6pig2kvna"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/staging/scene_base.gd" id="1_yaylo"]
 [ext_resource type="PackedScene" uid="uid://ddyo2jv7628sa" path="res://VR/Prefabs/player_boilerplate.tscn" id="2_1p7ny"]
@@ -11,6 +11,11 @@
 [ext_resource type="Material" uid="uid://djse7ur78mlf6" path="res://Mine/Tilesets/MT_BuildingInner.tres" id="7_q7fq6"]
 [ext_resource type="PackedScene" uid="uid://db37vgi6xr3kd" path="res://Mine/Prefabs/Ch3/DemonSlayerGun.tscn" id="8_jruwa"]
 [ext_resource type="PackedScene" uid="uid://d2wy8v0skx7ko" path="res://Mine/Prefabs/Enemy/Demon3.tscn" id="9_05h70"]
+[ext_resource type="PackedScene" uid="uid://dk1uxecbpp4cc" path="res://Mine/Models/Water/WaterPlane.glb" id="12_rnpal"]
+[ext_resource type="Script" path="res://Mine/Scripts/Misc/CycleTextures.gd" id="13_sevsf"]
+[ext_resource type="Script" path="res://Mine/Scripts/Misc/CycleTextureList.gd" id="14_k7fap"]
+[ext_resource type="Resource" uid="uid://bbgi8gx2r55hw" path="res://Mine/Models/Water/CycleTexture.tres" id="15_f4vdj"]
+[ext_resource type="Material" uid="uid://bpust28ygodwu" path="res://Mine/Models/Water/WaterMat.tres" id="16_kj7il"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_0vnc5"]
 lightmap_size_hint = Vector2i(482, 482)
@@ -521,4 +526,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9369, 0.349922, 36.3913)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.990566, 0.0181178, 3.33473)
 light_bake_mode = 1
 
+[node name="WaterPlane" parent="." instance=ExtResource("12_rnpal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.731, -0.25, 1.086)
+script = ExtResource("13_sevsf")
+lists = Array[ExtResource("14_k7fap")]([ExtResource("15_f4vdj")])
+meshPath = NodePath("Plane")
+
+[node name="Plane" parent="WaterPlane" index="0"]
+surface_material_override/0 = ExtResource("16_kj7il")
+
 [editable path="ExitDecal"]
+[editable path="WaterPlane"]

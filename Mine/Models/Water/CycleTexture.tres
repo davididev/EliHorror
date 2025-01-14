@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CycleTextureList" load_steps=6 format=3 uid="uid://bbgi8gx2r55hw"]
+
+[ext_resource type="Script" path="res://Mine/Scripts/Misc/CycleTextureList.gd" id="1_t6jb2"]
+[ext_resource type="Texture2D" uid="uid://cdyxf4ka0s6wn" path="res://Mine/Models/Water/WaterFrame1.png" id="1_tbb3k"]
+[ext_resource type="Texture2D" uid="uid://cr6n6jpt7dqnv" path="res://Mine/Models/Water/WaterFrame2.png" id="2_r88yt"]
+[ext_resource type="Texture2D" uid="uid://clwixs4j7f3rq" path="res://Mine/Models/Water/WaterFrame3.png" id="3_a8ia4"]
+[ext_resource type="Texture2D" uid="uid://cdngyxgcantc6" path="res://Mine/Models/Water/WaterFrame4.png" id="4_57ops"]
+
+[resource]
+script = ExtResource("1_t6jb2")
+Frames = Array[Texture2D]([ExtResource("1_tbb3k"), ExtResource("2_r88yt"), ExtResource("3_a8ia4"), ExtResource("4_57ops"), ExtResource("3_a8ia4"), ExtResource("2_r88yt")])
+DelayPerFrame = 0.95
