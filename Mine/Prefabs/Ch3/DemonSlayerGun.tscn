@@ -10,10 +10,10 @@
 [ext_resource type="Shader" uid="uid://exvcwtrrtt8" path="res://Mine/Models/Gun/S_BulletRay.tres" id="8_tl63w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gw32u"]
-size = Vector3(0.5, 0.1, 0.2)
+size = Vector3(1, 0.2, 0.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r3fdk"]
-size = Vector3(0.05, 0.1, 0.05)
+size = Vector3(0.05, 0.2, 0.05)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3bqcl"]
 resource_local_to_scene = true
@@ -24,50 +24,50 @@ shader_parameter/FloatParameter = 1.0
 [node name="DemonSlayerGun" type="Node3D"]
 script = ExtResource("1_dm7iq")
 path_of_glow = NodePath("PickableObject/DemonGun/Glow")
-path_of_gun_fire = NodePath("PickableObject/GunFire/Cylinder")
+path_of_gun_fire = NodePath("PickableObject/DemonGun/GunFire/Cylinder")
 
 [node name="PickableObject" parent="." instance=ExtResource("1_uh4t8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+freeze = true
 second_hand_grab = 1
 
 [node name="CollisionShape3D" parent="PickableObject" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0162407)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0105558, 0.0466018, 0.154094)
 shape = SubResource("BoxShape3D_gw32u")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="PickableObject"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00957474, -0.0842377, 0.0792377)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0141312, -0.143068, 0.190217)
 shape = SubResource("BoxShape3D_r3fdk")
 
 [node name="GrabPointHandLeft" parent="PickableObject" instance=ExtResource("2_04a14")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.260898, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0170872, -0.202454, 0.189258)
 
 [node name="GrabPointHandLeft2" parent="PickableObject" instance=ExtResource("2_04a14")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.260898, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0170872, -0.202454, 0.189258)
 hand = 1
 
 [node name="HighlightRing" parent="PickableObject" instance=ExtResource("3_ix6q4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.260898, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0170872, -0.202454, 0.189258)
 
 [node name="DemonGun" parent="PickableObject" instance=ExtResource("3_5smrq")]
-transform = Transform3D(0.063, 0, 0, 0, 0.063, 0, 0, 0, 0.063, 0, 0, -0.0232675)
+transform = Transform3D(0.126, 0, 0, 0, 0.126, 0, 0, 0, 0.126, 0, 0, -0.0232675)
 
 [node name="Glow" parent="PickableObject/DemonGun" index="1"]
 surface_material_override/0 = ExtResource("5_g41bd")
+
+[node name="GunFire" parent="PickableObject/DemonGun" instance=ExtResource("7_b0xcr")]
+transform = Transform3D(7.93651, 0, 0, 0, 7.93651, 0, 0, 0, 7.93651, 0, 0, 0.184663)
+
+[node name="Cylinder" parent="PickableObject/DemonGun/GunFire" index="0"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 1.05879e-21, -4.37114e-08, -1, -4.37114e-08, 0, 0, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_3bqcl")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="PickableObject"]
 light_bake_mode = 0
 spot_range = 100.0
 spot_angle = 5.0
 
-[node name="GunFire" parent="PickableObject" instance=ExtResource("7_b0xcr")]
-visible = false
-
-[node name="Cylinder" parent="PickableObject/GunFire" index="0"]
-transform = Transform3D(-5.21253e-16, -1.19249e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, 1.19249e-08, 0, 0, 0)
-surface_material_override/0 = SubResource("ShaderMaterial_3bqcl")
-
 [connection signal="action_pressed" from="PickableObject" to="." method="_on_pickable_object_action_pressed"]
 
 [editable path="PickableObject"]
 [editable path="PickableObject/DemonGun"]
-[editable path="PickableObject/GunFire"]
+[editable path="PickableObject/DemonGun/GunFire"]

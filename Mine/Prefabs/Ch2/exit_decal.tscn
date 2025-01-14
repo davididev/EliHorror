@@ -8,6 +8,7 @@
 size = Vector3(2, 4, 1)
 
 [node name="ExitDecal" type="Area3D"]
+collision_layer = 2
 collision_mask = 524288
 script = ExtResource("1_ng2ap")
 FailureDialogue = ExtResource("2_b2nth")

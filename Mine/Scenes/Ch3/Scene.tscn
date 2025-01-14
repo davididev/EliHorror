@@ -484,7 +484,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_0kp7j")
 
 [node name="DemonSlayerGun" parent="." instance=ExtResource("8_jruwa")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.990566, 0.0181178, 3.33473)
+transform = Transform3D(0.99937, 0, -0.0354924, 0, 1, 0, 0.0354924, 0, 0.99937, -0.990566, 0.504649, 3.33473)
 
 [node name="Demon3" parent="." instance=ExtResource("9_05h70")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 10.8201, 0.420723, 24.2629)
