@@ -58,7 +58,7 @@ surface_material_override/0 = ExtResource("5_g41bd")
 transform = Transform3D(7.93651, 0, 0, 0, 7.93651, 0, 0, 0, 7.93651, 0, 0, 0.184663)
 
 [node name="Cylinder" parent="PickableObject/DemonGun/GunFire" index="0"]
-transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 1.05879e-21, -4.37114e-08, -1, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 3.59989e-21, -4.37114e-08, -1, -4.37114e-08, 0, 0, 0)
 surface_material_override/0 = SubResource("ShaderMaterial_3bqcl")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="PickableObject"]
