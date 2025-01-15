@@ -7,9 +7,9 @@
 emission_shape = 1
 emission_sphere_radius = 1.0
 spread = 180.0
-initial_velocity_min = 2.0
-initial_velocity_max = 2.0
-gravity = Vector3(0, -4, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+gravity = Vector3(0, -2, 0)
 anim_speed_min = 1.0
 anim_speed_max = 4.0
 
@@ -22,7 +22,6 @@ script = ExtResource("1_sqp2r")
 overall_lifetime = 3.0
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-emitting = false
 amount = 48
 one_shot = true
 explosiveness = 1.0
