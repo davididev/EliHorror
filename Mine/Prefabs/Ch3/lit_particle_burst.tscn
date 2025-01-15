@@ -22,6 +22,7 @@ script = ExtResource("1_sqp2r")
 overall_lifetime = 3.0
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+emitting = false
 amount = 48
 one_shot = true
 explosiveness = 1.0

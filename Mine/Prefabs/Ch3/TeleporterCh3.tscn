@@ -1,0 +1,128 @@
+[gd_scene load_steps=21 format=3 uid="uid://b7wn0qcw7oab0"]
+
+[ext_resource type="Script" path="res://Mine/Scripts/Ch3/teleporter_ch_3.gd" id="1_ehon1"]
+[ext_resource type="PackedScene" uid="uid://dq8su4th0dyec" path="res://Mine/Models/Ch3/Teleporter/Chapter3Teleporter.glb" id="1_jubbr"]
+[ext_resource type="PackedScene" uid="uid://d2wy8v0skx7ko" path="res://Mine/Prefabs/Enemy/Demon3.tscn" id="2_bkim6"]
+[ext_resource type="Script" path="res://Mine/Scripts/Ch3/teleporter_piece.gd" id="3_4o2lk"]
+[ext_resource type="PackedScene" uid="uid://cd6dgng7jutp2" path="res://Mine/Prefabs/Enemy/blood_explosion.tscn" id="3_6h3il"]
+[ext_resource type="Material" uid="uid://bvwc33mcfsjb4" path="res://Mine/Particles/M_LitBurst.tres" id="6_eobam"]
+[ext_resource type="Material" uid="uid://di54xe32lklbg" path="res://Mine/Particles/M_Smoke Cloud.tres" id="7_1my33"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vnsi2"]
+points = PackedVector3Array(-0.000279069, -0.25, -1.5, -1.42658, -0.25, -0.463569, -0.000279069, 0, -1.20012, 0.570578, 0, -0.785495, 1.42631, -0.25, -0.463569, -1.14144, 0, -0.37087, -0.881701, -0.25, 1.21353, -0.923594, 0, 0.299809, 1.14116, 0, -0.37087, 0.881422, -0.25, 1.21353, -0.705472, 0, 0.970753, 0.705193, 0, 0.970753)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_sao0p"]
+points = PackedVector3Array(1.37667, 3.49726, 0.0347253, 1.06992, 2.93489, -0.73227, 1.06992, 3.03719, -0.73227, 1.01873, 3.24162, 0.290524, 1.37667, 2.98604, 0.0347253, 1.37667, 3.03719, -0.73227, 1.01873, 3.44617, -0.271933, 1.37667, 3.49726, 0.290524, 1.01873, 3.49726, 0.290524, 1.37667, 3.34387, -0.476471, 1.0469, 3.02225, -0.00550756, 1.37667, 3.24162, 0.290524, 1.01873, 2.98604, -0.527631, 1.32551, 2.93489, -0.73227, 1.06992, 2.93489, -0.476471, 1.06992, 3.34387, -0.476471, 1.37667, 3.44617, -0.271933, 1.06992, 3.49726, -0.0164344, 1.37667, 3.19058, -0.62985, 1.01873, 3.29277, -0.476471, 1.32551, 2.93489, -0.476471, 1.37667, 2.98604, -0.73227, 1.17219, 3.19058, -0.62985)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wsq3j"]
+points = PackedVector3Array(1.33174, 3, -0.470423, 1.06986, 0.224695, -0.73227, 1.06986, 0.224695, -0.476596, 1.06369, 3, -0.470423, 1.32556, 2.93457, -0.73227, 1.32556, 0.224695, -0.476596, 1.32556, 0.224695, -0.73227, 1.06986, 2.93457, -0.73227)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_uwqux"]
+points = PackedVector3Array(1.01873, 3.49726, 0.0347753, 0.814036, 2.98604, -0.476571, 0.814036, 3.08834, -0.476571, 0.25163, 3.03719, 0.239314, 1.01873, 2.98604, 0.08591, 0.507379, 3.34387, -0.271958, 0.558588, 3.44617, 0.290524, 1.01873, 3.34387, -0.425362, 0.25163, 2.93489, -0.0163593, 1.01873, 3.19058, 0.290524, 0.507379, 2.93489, 0.239314, 0.353975, 3.34387, 0.290524, 1.01873, 3.49726, 0.290524, 0.995446, 3, -0.453292, 0.865246, 3.44617, -0.220823, 0.353975, 3.34387, 0.137045, 0.609648, 3.44617, 0.0347753, 0.25163, 3.03719, -0.0163593, 0.507379, 2.98604, -0.271958, 0.865246, 3.34387, -0.425362, 0.326747, 3.00259, 0.262933, 0.507379, 2.93489, -0.0163593, 1.01873, 3.24162, -0.476571, 0.814036, 3.49726, 0.188179, 0.791976, 3.01441, 0.243217, 0.2772, 2.95363, 0.217158, 0.30284, 3.19058, 0.290524, 1.01873, 3.39502, -0.374227, 0.405109, 3.39502, 0.239314, 0.711767, 3.44617, -0.118554, 0.353975, 3.19058, -0.118554, 0.456319, 3.39502, 0.0347753)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fiaa6"]
+points = PackedVector3Array(0.5022, 2.88021, 0.234231, 0.251655, 0.224695, -0.0162893, 0.251655, 0.224695, 0.239359, 0.251655, 2.93457, -0.0162893, 0.507329, 0.224695, -0.0162893, 0.513502, 3, -0.0224621, 0.251655, 2.93457, 0.239359, 0.5022, 0.279053, 0.234231)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pou73"]
+points = PackedVector3Array(1.3767, 3.03719, -0.68113, 2.14372, 3.03719, 0.290524, 2.04139, 3.34387, 0.290524, 1.3767, 3.19058, 0.290524, 1.3767, 3.49726, 0.0346753, 1.6325, 3.34387, -0.476546, 2.14372, 2.93489, -0.0164945, 1.3767, 2.98604, 0.085845, 1.58137, 3.49726, 0.290524, 1.90929, 2.88804, 0.0133, 1.99026, 3.34387, -0.0164945, 1.58137, 2.98604, 0.290524, 1.3767, 3.34387, -0.476546, 1.83687, 3.44617, 0.085845, 1.3767, 3.49726, 0.290524, 2.14372, 3.03719, -0.0164945, 1.42798, 3.08834, -0.68113, 2.1222, 2.95067, 0.214871, 1.53024, 3.44617, -0.220793, 1.39998, 3, -0.459477, 1.83687, 2.98604, -0.323132, 1.888, 2.93489, 0.239259, 1.99026, 3.39502, 0.290524, 1.73476, 3.44617, -0.0675691, 1.888, 3.34387, -0.169909, 2.04139, 3.34387, 0.137015, 1.58137, 2.98604, -0.476546, 1.3767, 3.19058, -0.62996, 1.3767, 3.39502, -0.374207, 1.888, 3.08834, -0.271963, 1.58137, 3.49726, 0.188089, 1.93913, 3.39502, 0.0346753)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rbeoo"]
+points = PackedVector3Array(2.14375, 2.93457, 0.239359, 1.8881, 0.224695, -0.0162893, 1.8972, 0.321154, 0.230259, 1.88193, 3, 0.245532, 1.88193, 3, -0.0224621, 2.14375, 0.224695, -0.0162893, 2.14375, 0.224695, 0.239359, 2.14375, 2.93457, -0.0162893)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tux2t"]
+points = PackedVector3Array(1.27451, 3.49729, 0.801971, 2.1438, 3.0372, 0.444088, 2.1438, 2.98607, 0.444088, 1.88801, 2.73035, 1.26206, 1.58135, 2.98607, 0.290624, 1.99029, 3.39496, 0.546397, 1.27451, 3.08833, 1.31332, 1.24163, 3.36123, 0.251938, 1.58135, 3.34383, 1.21091, 1.58135, 2.73035, 0.955235, 1.99029, 3.39496, 0.290624, 1.88801, 3.0372, 1.26206, 1.27451, 2.98607, 0.750916, 1.58135, 3.49729, 0.290624, 1.99029, 3.34383, 0.801971, 1.58135, 2.73035, 1.26206, 1.27451, 3.34383, 1.26206, 1.88801, 2.73035, 0.955235, 1.83688, 3.44609, 0.699761, 2.09257, 3.24157, 0.290624, 2.05077, 3, 0.34637, 1.53021, 3.44609, 1.00639, 1.31156, 3.46461, 0.334212, 1.88801, 3.34383, 0.955235, 2.04143, 3.13931, 0.801971, 2.09257, 3.2927, 0.444088, 1.58135, 3.49729, 0.597452, 1.88801, 3.44609, 0.341779, 1.27451, 3.44609, 1.05744, 1.32189, 3, 1.25757, 1.68363, 3.39496, 1.05744, 1.37679, 3.08833, 1.31332)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qud3n"]
+points = PackedVector3Array(0.352964, 3, 0.34637, 0.507329, 2.73035, 0.955235, 1.29407, 3.35266, 0.270984, 1.21867, 3, 1.25757, 0.405109, 3.34383, 0.801971, 1.06968, 3.34383, 1.26206, 0.507329, 2.73035, 1.26206, 0.405109, 3.39496, 0.290624, 1.27442, 2.98607, 0.750916, 0.814087, 2.98607, 0.290624, 1.27442, 3.49729, 0.801971, 0.814087, 2.73035, 0.955235, 0.25163, 2.98607, 0.444088, 0.507329, 3.0372, 1.26206, 0.814087, 3.49729, 0.290624, 0.558488, 3.44609, 0.699761, 1.22326, 3.19044, 1.31332, 0.814087, 3.39496, 1.1086, 0.814087, 2.73035, 1.26206, 1.27442, 3.44609, 1.05744, 1.23484, 3.46761, 0.330204, 0.30279, 3.24157, 0.290624, 1.01873, 3.44609, 1.05744, 0.507329, 3.34383, 0.955235, 0.35395, 3.13931, 0.801971, 0.30279, 3.2927, 0.444088, 0.763027, 3.34383, 1.15975, 1.22326, 3.39496, 1.21091, 1.06968, 3.08833, 1.31332, 0.507329, 3.44609, 0.341779, 0.405109, 3.39496, 0.546397, 0.35395, 3.24157, 0.750916)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2a777"]
+emission_shape_scale = Vector3(1.5, 0.5, 1.5)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 9.8, 0)
+anim_speed_min = 1.9
+anim_speed_max = 3.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_dyt87"]
+material = ExtResource("6_eobam")
+size = Vector2(2, 2)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8hoao"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 0.5, 1)
+gravity = Vector3(0, 0.5, 0)
+color = Color(0, 0.607843, 0, 1)
+anim_speed_min = 1.0
+anim_speed_max = 2.5
+
+[sub_resource type="QuadMesh" id="QuadMesh_qcg6w"]
+material = ExtResource("7_1my33")
+
+[node name="TeleporterCh3" type="Node3D"]
+script = ExtResource("1_ehon1")
+particle_burst_damage_path = NodePath("ParticlesDamage")
+particle_burst_teleport_path = NodePath("ParticlesTeleport")
+demon_prefab = ExtResource("2_bkim6")
+explosion_prefab = ExtResource("3_6h3il")
+
+[node name="Chapter3Teleporter" parent="." instance=ExtResource("1_jubbr")]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Chapter3Teleporter/Cylinder_001" index="0"]
+freeze = true
+script = ExtResource("3_4o2lk")
+root_path = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chapter3Teleporter/Cylinder_001/RigidBody3D"]
+shape = SubResource("ConvexPolygonShape3D_vnsi2")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Chapter3Teleporter/Core1" index="0"]
+script = ExtResource("3_4o2lk")
+root_path = NodePath("../../..")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="Chapter3Teleporter/Core1/RigidBody3D"]
+shape = SubResource("ConvexPolygonShape3D_sao0p")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Chapter3Teleporter/Core1/RigidBody3D"]
+shape = SubResource("ConvexPolygonShape3D_wsq3j")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Chapter3Teleporter/Core1/RigidBody3D"]
+shape = SubResource("ConvexPolygonShape3D_uwqux")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Chapter3Teleporter/Core1/RigidBody3D"]
+shape = SubResource("ConvexPolygonShape3D_fiaa6")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Chapter3Teleporter/Core1/RigidBody3D"]
+shape = SubResource("ConvexPolygonShape3D_pou73")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Chapter3Teleporter/Core1/RigidBody3D"]
+shape = SubResource("ConvexPolygonShape3D_rbeoo")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Chapter3Teleporter/Core1/RigidBody3D"]
+shape = SubResource("ConvexPolygonShape3D_tux2t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chapter3Teleporter/Core1/RigidBody3D"]
+shape = SubResource("ConvexPolygonShape3D_qud3n")
+
+[node name="ParticlesDamage" type="GPUParticles3D" parent="."]
+layers = 2
+emitting = false
+amount = 32
+one_shot = true
+explosiveness = 0.5
+process_material = SubResource("ParticleProcessMaterial_2a777")
+draw_pass_1 = SubResource("QuadMesh_dyt87")
+
+[node name="ParticlesTeleport" type="GPUParticles3D" parent="."]
+layers = 2
+emitting = false
+amount = 30
+lifetime = 4.0
+one_shot = true
+explosiveness = 0.8
+process_material = SubResource("ParticleProcessMaterial_8hoao")
+draw_pass_1 = SubResource("QuadMesh_qcg6w")
+
+[connection signal="OnDamage" from="Chapter3Teleporter/Cylinder_001/RigidBody3D" to="Chapter3Teleporter/Cylinder_001/RigidBody3D" method="_on_on_damage"]
+[connection signal="OnDamage" from="Chapter3Teleporter/Core1/RigidBody3D" to="Chapter3Teleporter/Core1/RigidBody3D" method="_on_on_damage"]
+
+[editable path="Chapter3Teleporter"]

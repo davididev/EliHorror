@@ -58,7 +58,7 @@ void fragment() {
 graph_offset = Vector2(0, 94.1942)
 modes/blend = 1
 modes/specular = 2
-nodes/fragment/0/position = Vector2(520, 140)
+nodes/fragment/0/position = Vector2(320, 140)
 nodes/fragment/2/node = SubResource("VisualShaderNodeFresnel_b6868")
 nodes/fragment/2/position = Vector2(20, 160)
 nodes/fragment/3/node = SubResource("VisualShaderNodeFloatParameter_0htfq")
