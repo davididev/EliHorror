@@ -1,4 +1,4 @@
-extends Node3D
+class_name PlayParticlesOnce extends Node3D
 
 @export var overall_lifetime = 5.0;
 
