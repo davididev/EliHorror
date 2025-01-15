@@ -9,15 +9,15 @@ default_value_enabled = true
 default_value = 5.0
 
 [sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_gtt68"]
-constant = Color(0, 1, 1, 1)
+constant = Color(0, 0.784314, 1, 1)
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_aus8n"]
 default_input_values = [0, Quaternion(0, 0, 0, 0), 1, Quaternion(0, 0, 0, 0)]
 op_type = 2
 operator = 2
 
-[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_vr52g"]
-constant = Color(0, 0, 0, 1)
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_5srnh"]
+constant = Color(0, 0, 0.392157, 1)
 
 [resource]
 code = "shader_type spatial;
@@ -29,7 +29,7 @@ uniform float FloatParameter = 5;
 
 void fragment() {
 // ColorConstant:6
-	vec4 n_out6p0 = vec4(0.000000, 0.000000, 0.000000, 1.000000);
+	vec4 n_out6p0 = vec4(0.000000, 0.000000, 0.392157, 1.000000);
 
 
 // FloatParameter:3
@@ -41,7 +41,7 @@ void fragment() {
 
 
 // ColorConstant:4
-	vec4 n_out4p0 = vec4(0.000000, 1.000000, 1.000000, 1.000000);
+	vec4 n_out4p0 = vec4(0.000000, 0.784314, 1.000000, 1.000000);
 
 
 // VectorOp:5
@@ -55,6 +55,7 @@ void fragment() {
 
 }
 "
+graph_offset = Vector2(0, 94.1942)
 modes/blend = 1
 modes/specular = 2
 nodes/fragment/0/position = Vector2(520, 140)
@@ -66,6 +67,6 @@ nodes/fragment/4/node = SubResource("VisualShaderNodeColorConstant_gtt68")
 nodes/fragment/4/position = Vector2(20, 400)
 nodes/fragment/5/node = SubResource("VisualShaderNodeVectorOp_aus8n")
 nodes/fragment/5/position = Vector2(240, 320)
-nodes/fragment/6/node = SubResource("VisualShaderNodeColorConstant_vr52g")
-nodes/fragment/6/position = Vector2(340, 200)
+nodes/fragment/6/node = SubResource("VisualShaderNodeColorConstant_5srnh")
+nodes/fragment/6/position = Vector2(260, 140)
 nodes/fragment/connections = PackedInt32Array(3, 0, 2, 3, 4, 0, 5, 1, 2, 0, 5, 0, 5, 0, 0, 5, 6, 0, 0, 0)
