@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d2wy8v0skx7ko" path="res://Mine/Prefabs/Enemy/Demon3.tscn" id="2_bkim6"]
 [ext_resource type="Script" path="res://Mine/Scripts/Ch3/teleporter_piece.gd" id="3_4o2lk"]
 [ext_resource type="PackedScene" uid="uid://cd6dgng7jutp2" path="res://Mine/Prefabs/Enemy/blood_explosion.tscn" id="3_6h3il"]
-[ext_resource type="Material" uid="uid://bvwc33mcfsjb4" path="res://Mine/Particles/M_LitBurst.tres" id="6_eobam"]
+[ext_resource type="Material" uid="uid://35dbyjf0tx3b" path="res://Mine/Particles/M_Fireball.tres" id="6_f67sc"]
 [ext_resource type="Material" uid="uid://di54xe32lklbg" path="res://Mine/Particles/M_Smoke Cloud.tres" id="7_1my33"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vnsi2"]
@@ -44,7 +44,7 @@ anim_speed_min = 1.9
 anim_speed_max = 3.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_dyt87"]
-material = ExtResource("6_eobam")
+material = ExtResource("6_f67sc")
 size = Vector2(2, 2)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8hoao"]

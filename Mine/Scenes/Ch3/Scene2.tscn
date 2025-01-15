@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://cyyjs4i54fmge"]
+[gd_scene load_steps=20 format=4 uid="uid://cyyjs4i54fmge"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/staging/scene_base.gd" id="1_2sjnp"]
 [ext_resource type="PackedScene" uid="uid://ddyo2jv7628sa" path="res://VR/Prefabs/player_boilerplate.tscn" id="2_1aaub"]
@@ -8,6 +8,7 @@
 [ext_resource type="LightmapGIData" uid="uid://4245lhfxe1hh" path="res://Mine/Scenes/Ch3/Scene2.lmbake" id="6_27c3f"]
 [ext_resource type="PackedScene" uid="uid://db37vgi6xr3kd" path="res://Mine/Prefabs/Ch3/DemonSlayerGun.tscn" id="7_13aur"]
 [ext_resource type="PackedScene" uid="uid://b7wn0qcw7oab0" path="res://Mine/Prefabs/Ch3/TeleporterCh3.tscn" id="8_lu8w7"]
+[ext_resource type="Script" path="res://VR/Scripts/Misc/SceneVars.gd" id="9_l3p3a"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_p5jgq"]
 lightmap_size_hint = Vector2i(538, 538)
@@ -233,3 +234,7 @@ transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 5.803, 0
 
 [node name="TeleporterCh3" parent="." instance=ExtResource("8_lu8w7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.36, -0.5, 3.80335)
+
+[node name="SceneVars" type="Node3D" parent="."]
+script = ExtResource("9_l3p3a")
+MusicPath = "LetsPlay.mp3"

@@ -51,7 +51,7 @@ func _on_pickable_object_action_pressed(pickable: Variant) -> void:
 			#end = result.position;
 			
 			SoundFXPlayer.PlaySound(FireSound, get_tree(), origin, 5.0, 2.0);
-			var finalResult = to_global(result.position);
+			var finalResult = result.position;
 			var s = origin.distance_to(finalResult)
 			get_node(path_of_gun_fire).scale = Vector3(1.0, s, 1.0);
 			print("Pos: ", finalResult, "s: ", s);

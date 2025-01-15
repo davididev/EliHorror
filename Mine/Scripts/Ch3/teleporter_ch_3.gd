@@ -3,7 +3,7 @@ extends Node3D
 var hitpoints = 60;
 var spawnTimer = 0.0;
 const SPAWN_TIME = 10.0;
-const MAX_HP = 60;
+const MAX_HP = 10;
 
 @export var particle_burst_damage_path : NodePath;
 @export var particle_burst_teleport_path : NodePath;
@@ -21,8 +21,8 @@ func _process(delta: float) -> void:
 	spawnTimer -= delta;
 	if spawnTimer <= 0.0:
 		var inst = demon_prefab.instantiate();
-		inst.global_position = global_position + Vector3(0.0, 1.0, 0.0);
-		add_child(inst);
+		inst.global_position = global_position + Vector3(0.0, 1.5, 0.0);
+		get_parent().add_child(inst);
 		spawnTimer = SPAWN_TIME;
 		SoundFXPlayer.PlaySound("Teleport.mp3", get_tree(), global_position, 8.0, 10.0);
 		get_node(particle_burst_teleport_path).emitting = true;
@@ -37,6 +37,6 @@ func DamageTeleporter():
 		visible = false;
 		get_tree().create_timer(2.0).timeout;
 		var args : Array[String];
-		args.append("Mine/Scenes/Ch1/Epilogue.tscn");
+		args.append("Mine/Scenes/Epilogue.tscn");
 		args.append("0,0,0");
 		DialogueHandler.Instance.SteamTeleport(args, true)
