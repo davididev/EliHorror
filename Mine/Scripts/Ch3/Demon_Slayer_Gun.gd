@@ -3,6 +3,7 @@ extends Node3D
 @export var path_of_glow : NodePath;
 @export var path_of_gun_fire : NodePath;
 @export var FireSound : String = "Shoot.mp3"
+@export var ExplosionPrefab : PackedScene;
 const START_GLOW_STRENGTH = 10.0;
 const END_GLOW_STRENGTH = 1.0;
 const CHARGE_TIME = 2.0;
@@ -50,9 +51,14 @@ func _on_pickable_object_action_pressed(pickable: Variant) -> void:
 			#end = result.position;
 			
 			SoundFXPlayer.PlaySound(FireSound, get_tree(), origin, 5.0, 2.0);
-			var s = origin.distance_to(to_global(result.position))
+			var finalResult = to_global(result.position);
+			var s = origin.distance_to(finalResult)
 			get_node(path_of_gun_fire).scale = Vector3(1.0, s, 1.0);
-			print("Pos: ", to_global(result.position), "s: ", s);
+			print("Pos: ", finalResult, "s: ", s);
+			var expInstance = ExplosionPrefab.instantiate();
+			expInstance.position = finalResult;
+			add_child(expInstance);
+			
 			get_node(path_of_gun_fire).visible = true;
 			currentFireFresnel = 1.0;
 			print(result.collider.name);

@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://db37vgi6xr3kd"]
+[gd_scene load_steps=13 format=3 uid="uid://db37vgi6xr3kd"]
 
 [ext_resource type="Script" path="res://Mine/Scripts/Ch3/Demon_Slayer_Gun.gd" id="1_dm7iq"]
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_uh4t8"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_04a14"]
+[ext_resource type="PackedScene" uid="uid://bsofpx6e2oo4f" path="res://Mine/Prefabs/Ch3/lit_particle_burst.tscn" id="2_ktmek"]
 [ext_resource type="PackedScene" uid="uid://fxetwl3ekc58" path="res://Mine/Models/Gun/DemonGun.glb" id="3_5smrq"]
 [ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="3_ix6q4"]
 [ext_resource type="Material" uid="uid://ce1x726kajema" path="res://Mine/Models/Gun/M_Glow.tres" id="5_g41bd"]
@@ -25,6 +26,7 @@ shader_parameter/FloatParameter = 1.0
 script = ExtResource("1_dm7iq")
 path_of_glow = NodePath("PickableObject/DemonGun/Glow")
 path_of_gun_fire = NodePath("PickableObject/DemonGun/GunFire/Cylinder")
+ExplosionPrefab = ExtResource("2_ktmek")
 
 [node name="PickableObject" parent="." instance=ExtResource("1_uh4t8")]
 freeze = true
@@ -59,6 +61,7 @@ transform = Transform3D(7.93651, 0, 0, 0, 7.93651, 0, 0, 0, 7.93651, 0, 0, 0.184
 
 [node name="Cylinder" parent="PickableObject/DemonGun/GunFire" index="0"]
 transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 3.59989e-21, -4.37114e-08, -1, -4.37114e-08, 0, 0, 0)
+visible = false
 surface_material_override/0 = SubResource("ShaderMaterial_3bqcl")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="PickableObject"]

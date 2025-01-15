@@ -1,0 +1,56 @@
+[gd_scene load_steps=16 format=3 uid="uid://0ve0kesvxmwx"]
+
+[ext_resource type="PackedScene" uid="uid://dk1uxecbpp4cc" path="res://Mine/Models/Water/WaterPlane.glb" id="1_6y7g0"]
+[ext_resource type="Script" path="res://Mine/Scripts/Ch3/acid_floor.gd" id="1_g27ck"]
+[ext_resource type="Script" path="res://Mine/Scripts/Misc/CycleTextures.gd" id="2_t3uo1"]
+[ext_resource type="Material" uid="uid://dbg4kles1mpbr" path="res://Mine/Models/Ch3/Acid/AcidMat.tres" id="2_y5sf0"]
+[ext_resource type="Script" path="res://Mine/Scripts/Misc/CycleTextureList.gd" id="3_l7o3h"]
+[ext_resource type="Texture2D" uid="uid://c58udbcho2wgg" path="res://Mine/Models/Ch3/Acid/Acid1.png" id="4_xxybn"]
+[ext_resource type="Texture2D" uid="uid://q2m0l2w5kxxg" path="res://Mine/Models/Ch3/Acid/Acid2.png" id="5_2pcea"]
+[ext_resource type="Texture2D" uid="uid://btrhj7giypsnx" path="res://Mine/Models/Ch3/Acid/Acid3.png" id="6_qa0dq"]
+[ext_resource type="Texture2D" uid="uid://br3y0i0v2nb11" path="res://Mine/Models/Ch3/Acid/Acid4.png" id="7_lblom"]
+[ext_resource type="Texture2D" uid="uid://cgbb7rjwtmf48" path="res://Mine/Models/Ch3/Acid/Acid5.png" id="8_57sjy"]
+[ext_resource type="Texture2D" uid="uid://clbegamq65h45" path="res://Mine/Models/Ch3/Acid/Acid6.png" id="9_kyonl"]
+[ext_resource type="Texture2D" uid="uid://01k3sluyj3qr" path="res://Mine/Models/Ch3/Acid/Acid7.png" id="10_7t34m"]
+[ext_resource type="Texture2D" uid="uid://66r0lk4qdyi3" path="res://Mine/Models/Ch3/Acid/Acid8.png" id="11_dxvux"]
+
+[sub_resource type="Resource" id="Resource_f7uei"]
+script = ExtResource("3_l7o3h")
+Frames = Array[Texture2D]([ExtResource("4_xxybn"), ExtResource("5_2pcea"), ExtResource("6_qa0dq"), ExtResource("7_lblom"), ExtResource("8_57sjy"), ExtResource("9_kyonl"), ExtResource("10_7t34m"), ExtResource("11_dxvux"), ExtResource("10_7t34m"), ExtResource("9_kyonl"), ExtResource("8_57sjy"), ExtResource("7_lblom"), ExtResource("6_qa0dq"), ExtResource("5_2pcea")])
+DelayPerFrame = 0.2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ae8ug"]
+size = Vector3(150, 1, 150)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_g27ck")
+
+[node name="WaterPlane" parent="." instance=ExtResource("1_6y7g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00762, -1.19209e-07, -0.868431)
+
+[node name="Plane" parent="WaterPlane" index="0"]
+surface_material_override/0 = ExtResource("2_y5sf0")
+
+[node name="CycleTexturesNode" type="Node3D" parent="."]
+script = ExtResource("2_t3uo1")
+lists = Array[ExtResource("3_l7o3h")]([SubResource("Resource_f7uei")])
+meshPath = NodePath("../WaterPlane/Plane")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_ae8ug")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 524288
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("BoxShape3D_ae8ug")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+
+[editable path="WaterPlane"]
