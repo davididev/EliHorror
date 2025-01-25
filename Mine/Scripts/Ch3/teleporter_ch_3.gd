@@ -1,5 +1,6 @@
 extends Node3D
 
+var jiggle = Vector3(0.0, 0.001, 0.0);
 var hitpoints = 60;
 var spawnTimer = 0.0;
 const SPAWN_TIME = 10.0;
@@ -14,6 +15,7 @@ const MAX_HP = 10;
 func _ready() -> void:
 	hitpoints = MAX_HP;
 	spawnTimer = 1.0;
+	jiggle = Vector3(0.0, 0.001, 0.0);
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,7 +28,9 @@ func _process(delta: float) -> void:
 		spawnTimer = SPAWN_TIME;
 		SoundFXPlayer.PlaySound("Teleport.mp3", get_tree(), global_position, 8.0, 10.0);
 		get_node(particle_burst_teleport_path).emitting = true;
-
+	
+	position += jiggle;  #Adding a jiggle so the dynamic lighting shows up
+	jiggle.y *= -1.0;
 func DamageTeleporter():
 	hitpoints -= 1;
 	get_node(particle_burst_damage_path).emitting = true;

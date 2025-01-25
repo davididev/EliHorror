@@ -17,6 +17,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if currentMeshPoint == -1:  ##Jiggle value so it responds to lighting
+		var value = get_node(Mesh_Path).get_blend_shape_value(currentMeshPoint)
+		if is_zero_approx(value):
+			value = 0.01;
+		else:
+			value = 0.00;
+		get_node(Mesh_Path).set_blend_shape_value(0, value);
 	if currentMeshPoint > -1:
 		var value = get_node(Mesh_Path).get_blend_shape_value(currentMeshPoint)
 		value = move_toward(value, 1.0, BLEND_SHAPE_PER_SECOND * delta);

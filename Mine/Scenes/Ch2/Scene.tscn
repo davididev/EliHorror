@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://cyk5xgkd6wx3c"]
+[gd_scene load_steps=46 format=4 uid="uid://cyk5xgkd6wx3c"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/staging/scene_base.gd" id="1_8540p"]
 [ext_resource type="PackedScene" uid="uid://ddyo2jv7628sa" path="res://VR/Prefabs/player_boilerplate.tscn" id="2_pv6dw"]
@@ -322,6 +322,9 @@ shadow_mesh = SubResource("ArrayMesh_wn2bd")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ypvf0"]
 points = PackedVector3Array(0, 3, 0, 0, 0, 0, 0, 3, -2.0001, -4, 3, 0, 0, 0, -2.0001, -4, 0, 0, -1.00039, 3, -3, -4, 3, -2.0001, -1.00039, 0, -3, -4, 0, -2.0001, -3.00039, 3, -3, -3.50039, 3, -2.5002, -3.00039, 0, -3, -3.50039, 0, -2.5002)
 
+[sub_resource type="Environment" id="Environment_1v4ri"]
+background_mode = 1
+
 [node name="XRToolsSceneBase" type="Node3D"]
 script = ExtResource("1_8540p")
 
@@ -609,6 +612,9 @@ transform = Transform3D(-6.34947e-08, -1.45259, -6.34947e-08, 0, -6.34947e-08, 1
 
 [node name="ExitDecal" parent="." instance=ExtResource("22_84odr")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -33.016, -1.13182, 27.4465)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1v4ri")
 
 [connection signal="Open" from="MentalHospitalDoor" to="MentalHospitalDoor" method="_on_open"]
 [connection signal="body_entered" from="MentalHospitalDoor/RigidBody3D" to="MentalHospitalDoor" method="_on_rigid_body_3d_body_entered"]
