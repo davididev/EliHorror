@@ -18,7 +18,7 @@ operator = 2
 
 [resource]
 code = "shader_type spatial;
-render_mode blend_add, depth_draw_opaque, cull_back, diffuse_lambert, specular_disabled;
+render_mode blend_add, depth_draw_opaque, cull_back, diffuse_lambert, specular_disabled, unshaded;
 
 uniform float FloatParameter = 5;
 
@@ -47,8 +47,10 @@ void fragment() {
 
 }
 "
+graph_offset = Vector2(-92.3636, 3.36363)
 modes/blend = 1
 modes/specular = 2
+flags/unshaded = true
 nodes/fragment/0/position = Vector2(320, 140)
 nodes/fragment/2/node = SubResource("VisualShaderNodeFresnel_b6868")
 nodes/fragment/2/position = Vector2(20, 160)

@@ -61,6 +61,8 @@ func _on_pickable_object_action_pressed(pickable: Variant) -> void:
 			
 			get_node(path_of_gun_fire).visible = true;
 			currentFireFresnel = 1.0;
+			var vs = get_node(path_of_glow).get_surface_override_material(0) as ShaderMaterial;
+			vs.set_shader_parameter("PowerValue", currentFireFresnel);
 			print(result.collider.name);
 			if result.collider != null:
 				if result.collider.has_signal("OnDamage"):

@@ -103,6 +103,7 @@ func run_towards_player(delta : float, targetPos : Vector3):
 func damage(amt : int, sourcePos : Vector3):
 	if damageTimer > 0.0:
 		return;
+	SoundFXPlayer.PlaySound("StabDemon.mp3", get_tree(), sourcePos, 5.0, 4.0);
 	damageTimer = 0.05;
 	Health -= amt;
 	if Health <= 0 && firstKilled: #Previously set to a high value
@@ -113,7 +114,7 @@ func damage(amt : int, sourcePos : Vector3):
 		dieTimer = 1.6;
 	else:
 		var inst = blood_hit_prefab.instantiate();
-		inst.global_position = sourcePos;
+		inst.global_position = get_node("CollisionShape3D/DemonMain").global_position + Vector3(0.0, 1.0, 0.0);
 		#inst.global_basis.z = get_node("CollisionShape3D/DemonMain").global_basis.z;
 		inst.global_rotation_degrees = get_node("CollisionShape3D/DemonMain").global_rotation_degrees
 		get_tree().root.add_child(inst);

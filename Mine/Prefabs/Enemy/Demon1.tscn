@@ -16,7 +16,7 @@ script = ExtResource("1_avqsw")
 boneAttachRightHand = NodePath("CollisionShape3D/DemonMain/godot_rig/Skeleton3D/BoneAttachment3D")
 tree = NodePath("CollisionShape3D/DemonMain/AnimationTree")
 path_to_fireball = NodePath("CollisionShape3D/DemonMain/godot_rig/Skeleton3D/BoneAttachment3D/FireballPunch/CollisionShape3D/GPUParticles3D")
-path_to_fire_light = NodePath("CollisionShape3D/DemonMain/godot_rig/Skeleton3D/BoneAttachment3D/FireballPunch/CollisionShape3D/OmniLight3D")
+path_to_fire_light = NodePath("CollisionShape3D/DemonMain/OmniLight3D")
 Health = 6
 dialogueOnDeath = ExtResource("2_3n8rf")
 
@@ -240,15 +240,17 @@ Damage = 8
 [node name="GPUParticles3D" parent="CollisionShape3D/DemonMain/godot_rig/Skeleton3D/BoneAttachment3D/FireballPunch/CollisionShape3D" index="0"]
 layers = 2
 
-[node name="OmniLight3D" parent="CollisionShape3D/DemonMain/godot_rig/Skeleton3D/BoneAttachment3D/FireballPunch/CollisionShape3D" index="1"]
-transform = Transform3D(1, -2.74364e-08, -1.19825e-08, 4.6721e-16, 1, -1.86263e-09, 0, 0, 1, 0, 0.345798, -6.70552e-08)
-light_bake_mode = 0
-
 [node name="AnimationTree" type="AnimationTree" parent="CollisionShape3D/DemonMain"]
 tree_root = ExtResource("3_kek88")
 anim_player = NodePath("../AnimationPlayer")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="CollisionShape3D/DemonMain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25919, 0.341996)
+visible = false
+omni_range = 10.0
+
 [node name="LookAtTransofrm" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.456226, 0)
 
 [connection signal="OnDamage" from="." to="." method="damage"]
 
