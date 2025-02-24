@@ -21,6 +21,7 @@ var blood_hit_prefab : PackedScene = preload("res://Mine/Prefabs/Enemy/blood_spa
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	XRToolsUserSettings.snap_turning = false;  #For this game, we don't want snap turning.
 	damage_color_alpha = 0.0;
 	damage_color_alpha_target = 0.0;
 	damageRoutine = false;
