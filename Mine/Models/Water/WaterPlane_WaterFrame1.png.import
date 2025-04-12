@@ -2,15 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgonu3kidhwbk"
+uid="uid://ww0dl25vxxbw"
 path.s3tc="res://.godot/imported/WaterPlane_WaterFrame1.png-3c28ef24c5a29d757249b55fe79a974e.s3tc.ctex"
 path.etc2="res://.godot/imported/WaterPlane_WaterFrame1.png-3c28ef24c5a29d757249b55fe79a974e.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "872e527432bf8662985587cfa9184ab4"
 }
 
 [deps]

@@ -611,7 +611,7 @@ transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, -7.05556, 0.636382, 24.868)
 transform = Transform3D(-6.34947e-08, -1.45259, -6.34947e-08, 0, -6.34947e-08, 1.45259, -1.45259, 6.34947e-08, 2.77544e-15, -5.04641, 0.413218, 21.3899)
 
 [node name="ExitDecal" parent="." instance=ExtResource("22_84odr")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -33.016, -1.13182, 27.4465)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -33.016, -1.35213, 27.2904)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1v4ri")

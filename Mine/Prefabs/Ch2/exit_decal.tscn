@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bw68lsw2ipov6"]
+[gd_scene load_steps=6 format=3 uid="uid://bw68lsw2ipov6"]
 
-[ext_resource type="Texture2D" uid="uid://jl05srjo58oh" path="res://Mine/Decals/ExitLevelDecal.png" id="1_fwox3"]
 [ext_resource type="Script" path="res://Mine/Scripts/Player/exit_decal.gd" id="1_ng2ap"]
 [ext_resource type="Resource" path="res://DialogueSystem/output/needkey.res" id="2_b2nth"]
+[ext_resource type="Material" uid="uid://4sg0bvkeksw2" path="res://Mine/Decals/House/M_QuadExit.tres" id="3_f20yq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mqknf"]
 size = Vector3(2, 4, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_m5nru"]
 
 [node name="ExitDecal" type="Area3D"]
 collision_layer = 2
@@ -17,9 +19,9 @@ FailureDialogue = ExtResource("2_b2nth")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("BoxShape3D_mqknf")
 
-[node name="Decal" type="Decal" parent="CollisionShape3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.638594, -0.53597)
-size = Vector3(4, 0.2, 4)
-texture_albedo = ExtResource("1_fwox3")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 1, 0, 0, -0.656901)
+mesh = SubResource("QuadMesh_m5nru")
+surface_material_override/0 = ExtResource("3_f20yq")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

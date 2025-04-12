@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cn322rbvl4iwn"]
+
+[ext_resource type="Texture2D" uid="uid://bep0d7cgd85tn" path="res://Mine/Decals/House/BloodSplatter.png" id="1_uudf4"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_uudf4")
+roughness = 0.0
