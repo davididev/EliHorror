@@ -1,8 +1,8 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://4sg0bvkeksw2"]
 
-[ext_resource type="Texture2D" uid="uid://de8ese02gbj5u" path="res://Mine/Decals/House/WindowDecal1.png" id="1_ehakv"]
+[ext_resource type="Texture2D" uid="uid://jl05srjo58oh" path="res://Mine/Decals/ExitLevelDecal.png" id="1_rm2kj"]
 
 [resource]
 transparency = 1
-albedo_texture = ExtResource("1_ehakv")
+albedo_texture = ExtResource("1_rm2kj")
 roughness = 0.0

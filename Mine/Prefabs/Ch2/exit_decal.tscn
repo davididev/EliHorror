@@ -21,6 +21,7 @@ shape = SubResource("BoxShape3D_mqknf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 1, 0, 0, -0.656901)
+gi_mode = 2
 mesh = SubResource("QuadMesh_m5nru")
 surface_material_override/0 = ExtResource("3_f20yq")
 
