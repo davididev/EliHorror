@@ -282,19 +282,19 @@ transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819
 
 [node name="Window" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 12.95)
-gi_mode = 2
+gi_mode = 0
 mesh = SubResource("QuadMesh_lct80")
 surface_material_override/0 = ExtResource("12_u7caw")
 
 [node name="Window2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4, 1, 12.95)
-gi_mode = 2
+gi_mode = 0
 mesh = SubResource("QuadMesh_lct80")
 surface_material_override/0 = ExtResource("12_u7caw")
 
 [node name="Window3" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -11, 1, 12.95)
-gi_mode = 2
+gi_mode = 0
 mesh = SubResource("QuadMesh_lct80")
 surface_material_override/0 = ExtResource("12_u7caw")
 
@@ -306,7 +306,7 @@ surface_material_override/0 = ExtResource("13_dvnjt")
 
 [node name="Broken Glass" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -10.102, -0.99, -3.164)
-gi_mode = 2
+gi_mode = 0
 mesh = SubResource("QuadMesh_l8rsr")
 surface_material_override/0 = ExtResource("14_81xhp")
 

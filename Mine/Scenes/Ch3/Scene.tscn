@@ -533,6 +533,7 @@ lists = Array[ExtResource("14_k7fap")]([ExtResource("15_f4vdj")])
 meshPath = NodePath("Plane")
 
 [node name="Plane" parent="WaterPlane" index="0"]
+gi_mode = 0
 surface_material_override/0 = ExtResource("16_kj7il")
 
 [editable path="ExitDecal"]
