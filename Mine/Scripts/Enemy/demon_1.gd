@@ -28,6 +28,7 @@ func SetActive(act : bool):
 	visible = act;
 	set_physics_process(act);
 	set_process(act);
+	get_node("CollisionShape3D").call_deferred("set_disabled", !act);
 
 func _enter_tree() -> void:
 	lastState = "";
