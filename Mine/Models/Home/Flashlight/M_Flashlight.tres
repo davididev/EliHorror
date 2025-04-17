@@ -6,5 +6,5 @@
 albedo_color = Color(0.366595, 0.366595, 0.366595, 1)
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
-emission_energy_multiplier = 0.25
+emission_energy_multiplier = 0.75
 emission_texture = ExtResource("1_tumit")

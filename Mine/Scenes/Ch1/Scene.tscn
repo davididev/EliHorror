@@ -310,6 +310,10 @@ gi_mode = 0
 mesh = SubResource("QuadMesh_l8rsr")
 surface_material_override/0 = ExtResource("14_81xhp")
 
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.22837, 1.65283, -2.68745)
+omni_range = 2.0
+
 [editable path="BedRed"]
 [editable path="Cupboard1"]
 [editable path="Cupboard2"]

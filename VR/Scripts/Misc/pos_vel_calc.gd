@@ -17,6 +17,7 @@ var _last_head_position : Vector3;
 var blood_hit_prefab : PackedScene = preload("res://Mine/Prefabs/Enemy/blood_spatter_1.tscn");
 @export var LeftHandRef : NodePath;
 @export var RightHandRef : NodePath;
+@export var PlayerbodyRef : NodePath;
 @export var HeadRef : NodePath;
 
 # Called when the node enters the scene tree for the first time.
@@ -25,6 +26,7 @@ func _ready() -> void:
 	damage_color_alpha = 0.0;
 	damage_color_alpha_target = 0.0;
 	damageRoutine = false;
+	get_node(PlayerbodyRef).calibrate_player_height();
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

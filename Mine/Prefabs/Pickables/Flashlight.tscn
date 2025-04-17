@@ -27,6 +27,7 @@ spot_angle = 15.0
 [node name="Torch" type="MeshInstance3D" parent="PickableObject/CollisionShape3D" index="1"]
 transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0.128576, 0.000657215, 0.321567)
 layers = 2
+gi_mode = 0
 mesh = ExtResource("2_n6aer")
 skeleton = NodePath("../../..")
 
