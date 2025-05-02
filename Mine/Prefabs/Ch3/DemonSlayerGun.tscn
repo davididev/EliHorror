@@ -30,7 +30,6 @@ ExplosionPrefab = ExtResource("2_ktmek")
 
 [node name="PickableObject" parent="." instance=ExtResource("1_uh4t8")]
 freeze = true
-second_hand_grab = 1
 
 [node name="CollisionShape3D" parent="PickableObject" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0105558, 0.0466018, 0.154094)
