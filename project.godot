@@ -48,6 +48,10 @@ singletons=["res://addons/godot-openxr/config/godot_openxr.gdnlib"]
 
 Damagable="Switches and enemies"
 
+[godot_xr_tools]
+
+input/default_snap_turning=false
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
